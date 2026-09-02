@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Power Sex - Energía y Vitalidad Natural</title>
     <style>
-        /* Estilos Generales */
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
         
         body {
@@ -18,13 +17,15 @@
         }
 
         h1, h2, h3 {
-            color: #d4af37; /* Dorado */
+            color: #d4af37;
             margin-bottom: 20px;
+            text-align: center;
         }
 
         p {
             color: #cccccc;
             font-size: 1.1rem;
+            text-align: center;
         }
 
         .container {
@@ -34,10 +35,9 @@
             padding: 40px 0;
         }
 
-        /* Botones de WhatsApp */
         .btn-whatsapp {
-            display: inline-block;
-            background-color: #25D366; /* Verde WhatsApp */
+            display: block;
+            background-color: #25D366;
             color: #ffffff;
             font-size: 1.3rem;
             font-weight: 700;
@@ -47,9 +47,9 @@
             box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             text-align: center;
-            margin: 20px 0;
-            width: 100%;
-            max-width: 400px;
+            margin: 30px auto;
+            width: 90%;
+            max-width: 450px;
         }
 
         .btn-whatsapp:hover {
@@ -58,18 +58,16 @@
             color: #fff;
         }
 
-        /* Sección Hero */
         .hero {
             text-align: center;
-            padding: 60px 20px;
+            padding: 40px 20px;
             background: linear-gradient(135deg, #1a0000 0%, #000000 100%);
             border-bottom: 3px solid #d4af37;
         }
 
         .hero h1 {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             font-weight: 900;
-            line-height: 1.2;
             color: #ffffff;
         }
         
@@ -77,32 +75,36 @@
             color: #d4af37;
         }
 
-        .alert-box {
-            background-color: #8b0000; /* Rojo oscuro */
-            color: #fff;
-            padding: 10px;
-            border-radius: 5px;
-            display: inline-block;
-            font-weight: bold;
+        /* Galerías y Grids de Imágenes */
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .image-grid img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            border: 2px solid #333;
+        }
+
+        .feature-box {
+            background-color: #1a1a1a;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 40px 0;
+            border: 1px solid #d4af37;
+            text-align: center;
+        }
+
+        .feature-box img {
+            max-width: 100%;
+            border-radius: 10px;
             margin-bottom: 20px;
         }
 
-        /* Sección Beneficios */
-        .benefits ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .benefits li {
-            background-color: #1a1a1a;
-            margin-bottom: 15px;
-            padding: 20px;
-            border-left: 5px solid #d4af37;
-            border-radius: 0 5px 5px 0;
-            font-size: 1.1rem;
-        }
-
-        /* Sección Proceso de Compra */
         .process {
             background-color: #141414;
             padding: 40px 20px;
@@ -114,6 +116,7 @@
             display: flex;
             align-items: flex-start;
             margin-bottom: 25px;
+            text-align: left;
         }
 
         .step-num {
@@ -129,54 +132,23 @@
             border-radius: 50%;
             margin-right: 15px;
         }
-
-        /* Testimonios */
-        .testimonial {
-            background-color: #1a1a1a;
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            font-style: italic;
+        
+        .step p {
+            text-align: left;
+            margin-top: 5px;
         }
 
-        .stars {
-            color: #d4af37;
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-        }
-
-        /* FAQ */
-        .faq-item {
-            margin-bottom: 20px;
-        }
-        .faq-item h4 {
-            color: #ffffff;
-            margin-bottom: 5px;
-            font-size: 1.2rem;
-        }
-
-        /* Footer */
-        .footer {
-            text-align: center;
-            padding: 40px 20px;
-            background-color: #050505;
-            border-top: 1px solid #333;
-        }
-
-        /* Responsivo */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
-            .btn-whatsapp { font-size: 1.1rem; padding: 15px 20px; }
-        }
+        hr { border: 1px solid #333; margin: 40px 0; }
     </style>
 </head>
 <body>
 
+    <!-- HERO SECTION -->
     <header class="hero">
         <div class="container">
-            <div class="alert-box">🔥 Oferta Exclusiva por Tiempo Limitado</div>
-            <h1><span>Recupera tu Vitalidad</span> y Lleva tus Momentos al Siguiente Nivel</h1>
-            <p>Descubre el secreto natural para rendir al máximo, eliminar la fatiga y disfrutar sin preocupaciones. Envío 100% discreto y seguro a todo el país.</p>
+            <h1><span>NO ES PARA EL QUE NO PUEDE,</span> ES PARA EL QUE QUIERE MAS</h1>
+            <p>El secreto natural para rendir al máximo. Envíos 100% confiables y discretos a toda Colombia.</p>
+            <img src="WhatsApp Image 2026-09-02 at 3.49.01 PM.jpeg" alt="Caja Power Sex" style="max-width: 100%; border-radius: 10px; margin-top: 20px; border: 2px solid #d4af37;">
             <a href="https://wa.me/573012304916?text=Hola,%20quiero%20comprar%20Power%20Sex" class="btn-whatsapp" target="_blank">
                 👉 ¡QUIERO MI POWER SEX AHORA!
             </a>
@@ -184,103 +156,90 @@
     </header>
 
     <div class="container">
-        <section class="benefits">
-            <h2>¿Sientes que el estrés y el cansancio están apagando tu energía?</h2>
-            <p>No estás solo. El ritmo de vida actual nos quita la vitalidad cuando más la necesitamos. <strong>Power Sex</strong> es la solución natural diseñada para darte ese impulso extra.</p>
-            
-            <h3>Beneficios de elegir Power Sex:</h3>
-            <ul>
-                <li>⚡ <strong>Energía Inmediata:</strong> Efecto rápido para que estés listo cuando el momento lo requiera.</li>
-                <li>🔋 <strong>Mayor Resistencia:</strong> Disfruta de momentos más largos y placenteros sin miedo al cansancio.</li>
-                <li>🌿 <strong>Fórmula Natural:</strong> Elaborado con ingredientes de alta calidad que cuidan tu cuerpo.</li>
-                <li>🔒 <strong>Confianza Total:</strong> Recupera la seguridad en ti mismo y sorprende a tu pareja.</li>
-            </ul>
+        
+        <!-- COMPONENTES NATURALES -->
+        <section class="feature-box">
+            <h2>Componentes 100% Naturales</h2>
+            <img src="WhatsApp Image 2026-09-02 at 3.49.02 PM.jpeg" alt="Componentes Naturales">
+            <p>Nuestros productos están creados para brindarte un plus. Powersex NO posee ningún tipo de químico que pueda causar efectos secundarios o daños a tu cuerpo.</p>
         </section>
 
+        <!-- TIPS DE USO -->
+        <section>
+            <h2>Tips para antes del delicioso</h2>
+            <p>Sigue estas recomendaciones para una experiencia inolvidable:</p>
+            <div class="image-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+                <img src="WhatsApp Image 2026-09-02 at 3.49.03 PM (3).jpeg" alt="Tips">
+                <img src="WhatsApp Image 2026-09-02 at 3.49.03 PM (1).jpeg" alt="Aséate - A ella le encantará que estés fresco y huelas bien">
+                <img src="WhatsApp Image 2026-09-02 at 3.49.03 PM (2).jpeg" alt="Toma un PowerSex 30 minutos antes de la relación">
+            </div>
+            <h3 style="color: #fff; margin-top: 20px;">Toma un PowerSex 30 minutos antes de la relación</h3>
+        </section>
+
+        <hr>
+
+        <!-- SOCIAL PROOF / TESTIMONIOS Y ENVÍOS -->
+        <section>
+            <h2>Envíos 100% Confiables a Todo el País</h2>
+            <p>Cientos de clientes satisfechos en Cali, Huila y toda Colombia respaldan nuestra efectividad y discreción.</p>
+            <div class="image-grid">
+                <img src="WhatsApp Image 2026-09-02 at 3.49.02 PM (1).jpeg" alt="Cliente feliz con nuestro Power Sex en sachet en Cali">
+                <img src="WhatsApp Image 2026-09-02 at 3.49.02 PM (2).jpeg" alt="Nuestro cliente desde el Huila nos reporta su entrega con efectividad">
+                <img src="WhatsApp Image 2026-09-02 at 3.49.02 PM (3).jpeg" alt="Nuestro cliente feliz con todos los productos exclusivos de PowerSex en Cali">
+                <img src="WhatsApp Image 2026-09-02 at 3.49.02 PM (4).jpeg" alt="Cliente 100% satisfecho con su PowerSex">
+            </div>
+            <p><em>Garantizamos entregas discretas. Como puedes ver, enviamos en bolsas de papel selladas sin logos que revelen el contenido.</em></p>
+        </section>
+
+        <!-- PROCESO DE COMPRA -->
         <section class="process">
-            <h2 style="text-align: center;">🛒 ¿Cómo comprar? Rápido, Seguro y 100% Discreto</h2>
-            <p style="text-align: center; margin-bottom: 30px;">Hemos optimizado nuestro proceso. Todo el trato es directo y personalizado.</p>
+            <h2 style="text-align: center;">🛒 ¿Cómo hacer tu pedido de forma segura?</h2>
+            <p style="text-align: center; margin-bottom: 30px;">Atención directa por WhatsApp para coordinar tu pago y envío de inmediato.</p>
             
             <div class="step">
                 <div class="step-num">1</div>
                 <div>
-                    <h3 style="margin-top: 0; color: #fff;">Contáctanos</h3>
-                    <p>Haz clic en los botones verdes para hablar con un asesor oficial vía WhatsApp al +57 301 2304916.</p>
+                    <h3 style="margin-top: 0; color: #fff; text-align: left;">Contáctanos</h3>
+                    <p>Haz clic en el botón verde para hablar con un asesor vía WhatsApp al +57 301 2304916.</p>
                 </div>
             </div>
             
             <div class="step">
                 <div class="step-num">2</div>
                 <div>
-                    <h3 style="margin-top: 0; color: #fff;">Confirma tu Pedido</h3>
-                    <p>Dinos la cantidad que deseas. Te confirmaremos el valor y te daremos los datos para realizar tu pago (Aceptamos Giros y Transferencias).</p>
+                    <h3 style="margin-top: 0; color: #fff; text-align: left;">Acuerda el Pago</h3>
+                    <p>Indica qué cantidad deseas. Te daremos los datos para realizar tu giro o transferencia.</p>
                 </div>
             </div>
 
             <div class="step">
                 <div class="step-num">3</div>
                 <div>
-                    <h3 style="margin-top: 0; color: #fff;">Envía tu Comprobante</h3>
-                    <p>Una vez realices el giro, envíanos la foto del comprobante de pago por el chat junto con tus datos de envío.</p>
+                    <h3 style="margin-top: 0; color: #fff; text-align: left;">Envía tu Comprobante</h3>
+                    <p>Envíanos la foto de tu comprobante de pago por el chat junto con tus datos (Nombre, Cédula, Dirección, Ciudad).</p>
                 </div>
             </div>
 
             <div class="step">
                 <div class="step-num">4</div>
                 <div>
-                    <h3 style="margin-top: 0; color: #fff;">Envío Discreto y Programado</h3>
-                    <p>¡Listo! Empacamos tu pedido en una caja sin marcas ni logos para garantizar tu total privacidad y te enviamos tu número de guía.</p>
+                    <h3 style="margin-top: 0; color: #fff; text-align: left;">Recibe Discretamente</h3>
+                    <p>Despachamos tu pedido en empaque totalmente discreto y te enviamos la guía de rastreo.</p>
                 </div>
             </div>
-
-            <div style="text-align: center;">
-                <a href="https://wa.me/573012304916?text=Hola,%20me%20interesa%20saber%20cómo%20comprar%20Power%20Sex" class="btn-whatsapp" target="_blank">
-                    📲 HABLAR CON UN ASESOR AHORA
-                </a>
-            </div>
         </section>
 
-        <section>
-            <h2>Lo que dicen nuestros clientes...</h2>
-            <div class="testimonial">
-                <div class="stars">★★★★★</div>
-                <p>"El cambio es real. Lo compré con un poco de duda, pero el proceso fue súper discreto y el producto funciona de maravilla. Recomendado 100%." <br><strong>- Carlos M.</strong></p>
-            </div>
-            <div class="testimonial">
-                <div class="stars">★★★★★</div>
-                <p>"La atención por WhatsApp fue muy rápida. Hice el giro, mandé la foto y al otro día ya tenía el paquete en mi casa en un sobre totalmente sellado y discreto." <br><strong>- Andrés F.</strong></p>
-            </div>
-        </section>
+        <img src="WhatsApp Image 2026-09-02 at 3.49.01 PM (1).jpeg" alt="Caja con productos Power Sex" style="width: 100%; max-width: 600px; margin: 0 auto; display: block; border-radius: 10px;">
 
-        <hr style="border: 1px solid #333; margin: 40px 0;">
-
-        <section>
-            <h2>Preguntas Frecuentes</h2>
-            
-            <div class="faq-item">
-                <h4>¿Es seguro comprar por WhatsApp?</h4>
-                <p>Totalmente. Somos distribuidores autorizados. El trato directo nos permite darte atención personalizada y despachar tu pedido el mismo día que confirmamos tu pago.</p>
-            </div>
-
-            <div class="faq-item">
-                <h4>¿El envío es discreto?</h4>
-                <p>Es nuestra prioridad. Nadie sabrá lo que hay dentro de tu paquete. Usamos empaques opacos y sin etiquetas que revelen el contenido.</p>
-            </div>
-
-            <div class="faq-item">
-                <h4>¿Qué métodos de pago aceptan?</h4>
-                <p>Aceptamos transferencias bancarias y giros (Efecty, Gana, etc.). Nuestro asesor en WhatsApp te dará los datos exactos una vez confirmes la cantidad.</p>
-            </div>
-        </section>
     </div>
 
-    <footer class="footer">
+    <!-- FOOTER / CTA FINAL -->
+    <footer style="text-align: center; padding: 40px 20px; background-color: #050505; border-top: 1px solid #333;">
         <div class="container" style="padding: 0;">
-            <h2>⏳ ¡No dejes que la rutina gane la batalla!</h2>
-            <p><strong>Stock limitado. Pide hoy y asegura tu envío inmediato.</strong></p>
-            <p style="color: #fff; font-size: 1.2rem; margin-top: 20px;">Atención directa: <strong>📞 +57 301 2304916</strong></p>
+            <h2>⏳ ¡Asegura tu pedido hoy mismo!</h2>
+            <p style="color: #fff; font-size: 1.2rem; margin-top: 20px;">Atención y ventas: <strong>📞 +57 301 2304916</strong></p>
             
-            <a href="https://wa.me/573012304916?text=Hola,%20vengo%20de%20la%20página%20web%20y%20quiero%20hacer%20un%20pedido%20de%20Power%20Sex,%20¿me%20pueden%20dar%20los%20datos%20para%20el%20giro?" class="btn-whatsapp" target="_blank" style="max-width: 500px; font-size: 1.4rem;">
+            <a href="https://wa.me/573012304916?text=Hola,%20vengo%20de%20la%20página%20web%20y%20quiero%20hacer%20un%20pedido%20de%20Power%20Sex,%20¿me%20pueden%20dar%20los%20datos%20para%20el%20giro?" class="btn-whatsapp" target="_blank" style="font-size: 1.4rem;">
                 🔥 ¡HAZ TU PEDIDO POR WHATSAPP!
             </a>
         </div>
