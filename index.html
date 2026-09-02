@@ -85,7 +85,7 @@
             box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
         }
 
-        /* Recorte inteligente de Capturas (Cropping) */
+        /* Recorte inteligente de Capturas */
         .img-wrapper {
             width: 100%;
             aspect-ratio: 4 / 5;
@@ -97,7 +97,7 @@
             background-color: #000;
         }
 
-        .img-wrapper img, .img-wrapper video {
+        .img-wrapper img {
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -220,12 +220,12 @@
             font-weight: bold;
         }
 
-        /* Carrusel de Galería */
+        /* Carrusel de Galería (Solo Fotos) */
         .carousel-container {
             position: relative;
             max-width: 100%;
             margin: 30px auto;
-            padding: 0 40px; /* Espacio para las flechas */
+            padding: 0 40px; 
         }
 
         .carousel {
@@ -253,18 +253,18 @@
 
         .carousel-item {
             scroll-snap-align: center;
-            flex: 0 0 calc(100% - 20px); /* 1 elemento en móvil */
+            flex: 0 0 calc(100% - 20px);
         }
 
         @media (min-width: 768px) {
             .carousel-item {
-                flex: 0 0 calc(50% - 20px); /* 2 elementos en tablet */
+                flex: 0 0 calc(50% - 20px);
             }
         }
 
         @media (min-width: 1024px) {
             .carousel-item {
-                flex: 0 0 calc(33.333% - 20px); /* 3 elementos en desktop */
+                flex: 0 0 calc(33.333% - 20px);
             }
         }
 
@@ -300,15 +300,29 @@
             right: 0;
         }
 
-        /* Video de Respaldo */
-        .trust-video {
-            width: 100%;
+        /* Reproductor de Video Secuencial */
+        .video-gallery-container {
             max-width: 600px;
-            border-radius: 10px;
-            margin: 20px auto 0;
-            display: block;
+            margin: 0 auto 40px auto;
             border: 2px solid #333;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.7);
+            background-color: #000;
+        }
+        
+        .video-gallery-container video {
+            width: 100%;
+            display: block;
+        }
+
+        .video-indicator {
+            background-color: #1a1a1a;
+            color: #d4af37;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+            border-top: 1px solid #333;
         }
 
         hr { border: 1px solid #333; margin: 40px 0; }
@@ -324,7 +338,6 @@
             
             <video autoplay loop muted playsinline class="hero-video">
                 <source src="WhatsApp Video 2026-09-02 at 3.49.05 PM.mp4" type="video/mp4">
-                Tu navegador no soporta el video.
             </video>
 
             <a href="#combos" class="btn-whatsapp">
@@ -409,54 +422,37 @@
             <h2>🤫 Discreción y Clientes Satisfechos</h2>
             <p>📦 Paquetes sellados, sin logos. Entrega rápida de hoy a mañana.</p>
             
-            <!-- Carrusel Interactivo -->
+            <!-- Carrusel Interactivo SOLO de FOTOS -->
             <div class="carousel-container">
                 <button class="carousel-btn prev" id="btn-prev">&#10094;</button>
                 
                 <div class="carousel" id="gallery-carousel">
-                    <div class="carousel-item">
-                        <div class="img-wrapper"><img src="WhatsApp Image 2026-09-02 at 3.49.02 PM (1).jpeg" alt="Cliente feliz"></div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="img-wrapper"><img src="WhatsApp Image 2026-09-02 at 3.49.02 PM (2).jpeg" alt="Envío efectivo"></div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="img-wrapper"><img src="WhatsApp Image 2026-09-02 at 3.49.02 PM (3).jpeg" alt="Producto Cali"></div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="img-wrapper"><img src="WhatsApp Image 2026-09-02 at 3.49.02 PM (4).jpeg" alt="Cliente satisfecho"></div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="img-wrapper"><img src="WhatsApp Image 2026-09-02 at 3.49.02 PM.jpeg" alt="Componentes Naturales"></div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="img-wrapper">
-                            <video autoplay loop muted playsinline>
-                                <source src="WhatsApp Video 2026-09-02 at 3.49.05 PM.mp4" type="video/mp4">
-                            </video>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="img-wrapper">
-                            <video autoplay loop muted playsinline>
-                                <source src="WhatsApp Video 2026-09-02 at 3.54.02 PM.mp4" type="video/mp4">
-                            </video>
-                        </div>
-                    </div>
+                    <div class="carousel-item"><div class="img-wrapper"><img src="WhatsApp Image 2026-09-02 at 3.49.02 PM (1).jpeg" alt="Cliente feliz"></div></div>
+                    <div class="carousel-item"><div class="img-wrapper"><img src="WhatsApp Image 2026-09-02 at 3.49.02 PM (2).jpeg" alt="Envío efectivo"></div></div>
+                    <div class="carousel-item"><div class="img-wrapper"><img src="WhatsApp Image 2026-09-02 at 3.49.02 PM (3).jpeg" alt="Producto Cali"></div></div>
+                    <div class="carousel-item"><div class="img-wrapper"><img src="WhatsApp Image 2026-09-02 at 3.49.02 PM (4).jpeg" alt="Cliente satisfecho"></div></div>
+                    <div class="carousel-item"><div class="img-wrapper"><img src="WhatsApp Image 2026-09-02 at 3.49.02 PM.jpeg" alt="Componentes Naturales"></div></div>
                 </div>
 
                 <button class="carousel-btn next" id="btn-next">&#10095;</button>
             </div>
         </section>
 
-        <section class="feature-box">
-            <h2>Transparencia y Respaldo en Cada Despacho</h2>
-            <p>Contamos con un sistema organizado para garantizar que cada pedido llegue a su destino. Nuestra infraestructura respalda nuestros despachos diarios.</p>
+        <!-- SECCIÓN NUEVA: GALERÍA DE VIDEOS (Reproducción Continua y con Controles) -->
+        <section>
+            <h2>🎥 Conoce Más de Power Sex</h2>
+            <p>Mira nuestra galería en video. (Puedes pausar y ajustar el volumen desde los controles del video)</p>
             
-            <video autoplay loop muted playsinline class="trust-video">
-                <source src="WhatsApp Video 2026-09-02 at 3.54.02 PM.mp4" type="video/mp4">
-                Tu navegador no soporta el video.
-            </video>
+            <div class="video-gallery-container">
+                <!-- Se añade el atributo 'controls' para volumen y pausa -->
+                <video id="playlist-video" controls autoplay muted playsinline>
+                    <source src="WhatsApp Video 2026-09-02 at 3.49.05 PM.mp4" type="video/mp4">
+                    Tu navegador no soporta el video.
+                </video>
+                <div class="video-indicator" id="video-counter">
+                    Reproduciendo Video 1 de 2
+                </div>
+            </div>
         </section>
 
     </div>
@@ -476,17 +472,18 @@
         </div>
     </footer>
 
-    <!-- Script para el funcionamiento del Carrusel -->
+    <!-- Scripts de la página -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            
+            // 1. SCRIPT PARA EL CARRUSEL DE FOTOS
             const carousel = document.getElementById('gallery-carousel');
             const btnPrev = document.getElementById('btn-prev');
             const btnNext = document.getElementById('btn-next');
 
-            // Calcula el ancho de un item para saber cuánto desplazar
             const getScrollAmount = () => {
                 const item = carousel.querySelector('.carousel-item');
-                return item.clientWidth + 20; // clientWidth + el gap (20px)
+                return item.clientWidth + 20;
             };
 
             btnNext.addEventListener('click', () => {
@@ -496,6 +493,39 @@
             btnPrev.addEventListener('click', () => {
                 carousel.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
             });
+
+
+            // 2. SCRIPT PARA LA LISTA DE REPRODUCCIÓN DE VIDEOS
+            const videoElement = document.getElementById('playlist-video');
+            const videoCounter = document.getElementById('video-counter');
+            
+            // Aquí puedes agregar todos los nombres de los videos que quieras reproducir en orden
+            const videos = [
+                'WhatsApp Video 2026-09-02 at 3.49.05 PM.mp4',
+                'WhatsApp Video 2026-09-02 at 3.54.02 PM.mp4'
+            ];
+            
+            let currentVideoIndex = 0;
+
+            if (videoElement) {
+                // Cuando el video termina, pasa al siguiente
+                videoElement.addEventListener('ended', function() {
+                    currentVideoIndex++;
+                    
+                    // Si llega al final de la lista, vuelve al primero (Bucle infinito)
+                    if (currentVideoIndex >= videos.length) {
+                        currentVideoIndex = 0; 
+                    }
+                    
+                    // Cambia el archivo del video y actualiza el texto
+                    videoElement.src = videos[currentVideoIndex];
+                    videoCounter.innerText = 'Reproduciendo Video ' + (currentVideoIndex + 1) + ' de ' + videos.length;
+                    
+                    // Asegura que empiece a reproducirse automáticamente
+                    videoElement.play();
+                });
+            }
+            
         });
     </script>
 </body>
