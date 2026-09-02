@@ -97,7 +97,7 @@
             background-color: #000;
         }
 
-        .img-wrapper img {
+        .img-wrapper img, .img-wrapper video {
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -107,7 +107,7 @@
 
         .image-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
             margin: 30px 0;
         }
@@ -127,6 +127,7 @@
             font-size: 1.1rem;
             color: #ccc;
         }
+        
         .feature-box ul li {
             margin-bottom: 10px;
         }
@@ -219,6 +220,86 @@
             font-weight: bold;
         }
 
+        /* Carrusel de Galería */
+        .carousel-container {
+            position: relative;
+            max-width: 100%;
+            margin: 30px auto;
+            padding: 0 40px; /* Espacio para las flechas */
+        }
+
+        .carousel {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 20px;
+            scroll-behavior: smooth;
+            padding-bottom: 10px;
+        }
+
+        .carousel::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .carousel::-webkit-scrollbar-track {
+            background: #1a1a1a;
+            border-radius: 10px;
+        }
+
+        .carousel::-webkit-scrollbar-thumb {
+            background: #d4af37;
+            border-radius: 10px;
+        }
+
+        .carousel-item {
+            scroll-snap-align: center;
+            flex: 0 0 calc(100% - 20px); /* 1 elemento en móvil */
+        }
+
+        @media (min-width: 768px) {
+            .carousel-item {
+                flex: 0 0 calc(50% - 20px); /* 2 elementos en tablet */
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .carousel-item {
+                flex: 0 0 calc(33.333% - 20px); /* 3 elementos en desktop */
+            }
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(26, 26, 26, 0.9);
+            color: #d4af37;
+            border: 2px solid #d4af37;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            transition: all 0.3s;
+        }
+
+        .carousel-btn:hover {
+            background-color: #d4af37;
+            color: #000;
+        }
+
+        .carousel-btn.prev {
+            left: 0;
+        }
+
+        .carousel-btn.next {
+            right: 0;
+        }
+
         /* Video de Respaldo */
         .trust-video {
             width: 100%;
@@ -266,7 +347,7 @@
 
         <section>
             <h2>Tips para antes del delicioso</h2>
-            <div class="image-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+            <div class="image-grid">
                 <div class="img-wrapper"><img src="WhatsApp Image 2026-09-02 at 3.49.03 PM (3).jpeg" alt="Tips"></div>
                 <div class="img-wrapper"><img src="WhatsApp Image 2026-09-02 at 3.49.03 PM (1).jpeg" alt="Aséate"></div>
                 <div class="img-wrapper"><img src="WhatsApp Image 2026-09-02 at 3.49.03 PM (2).jpeg" alt="Toma un PowerSex 30 minutos antes"></div>
@@ -328,14 +409,46 @@
             <h2>🤫 Discreción y Clientes Satisfechos</h2>
             <p>📦 Paquetes sellados, sin logos. Entrega rápida de hoy a mañana.</p>
             
-            <div class="image-grid">
-                <div class="img-wrapper"><img src="WhatsApp Image 2026-09-02 at 3.49.02 PM (1).jpeg" alt="Cliente feliz"></div>
-                <div class="img-wrapper"><img src="WhatsApp Image 2026-09-02 at 3.49.02 PM (2).jpeg" alt="Envío efectivo"></div>
-                <div class="img-wrapper"><img src="WhatsApp Image 2026-09-02 at 3.49.02 PM (4).jpeg" alt="Cliente satisfecho"></div>
+            <!-- Carrusel Interactivo -->
+            <div class="carousel-container">
+                <button class="carousel-btn prev" id="btn-prev">&#10094;</button>
+                
+                <div class="carousel" id="gallery-carousel">
+                    <div class="carousel-item">
+                        <div class="img-wrapper"><img src="WhatsApp Image 2026-09-02 at 3.49.02 PM (1).jpeg" alt="Cliente feliz"></div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="img-wrapper"><img src="WhatsApp Image 2026-09-02 at 3.49.02 PM (2).jpeg" alt="Envío efectivo"></div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="img-wrapper"><img src="WhatsApp Image 2026-09-02 at 3.49.02 PM (3).jpeg" alt="Producto Cali"></div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="img-wrapper"><img src="WhatsApp Image 2026-09-02 at 3.49.02 PM (4).jpeg" alt="Cliente satisfecho"></div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="img-wrapper"><img src="WhatsApp Image 2026-09-02 at 3.49.02 PM.jpeg" alt="Componentes Naturales"></div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="img-wrapper">
+                            <video autoplay loop muted playsinline>
+                                <source src="WhatsApp Video 2026-09-02 at 3.49.05 PM.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="img-wrapper">
+                            <video autoplay loop muted playsinline>
+                                <source src="WhatsApp Video 2026-09-02 at 3.54.02 PM.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="carousel-btn next" id="btn-next">&#10095;</button>
             </div>
         </section>
 
-        <!-- VIDEO FINAL DE RESPALDO (NUEVO) -->
         <section class="feature-box">
             <h2>Transparencia y Respaldo en Cada Despacho</h2>
             <p>Contamos con un sistema organizado para garantizar que cada pedido llegue a su destino. Nuestra infraestructura respalda nuestros despachos diarios.</p>
@@ -363,5 +476,27 @@
         </div>
     </footer>
 
+    <!-- Script para el funcionamiento del Carrusel -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const carousel = document.getElementById('gallery-carousel');
+            const btnPrev = document.getElementById('btn-prev');
+            const btnNext = document.getElementById('btn-next');
+
+            // Calcula el ancho de un item para saber cuánto desplazar
+            const getScrollAmount = () => {
+                const item = carousel.querySelector('.carousel-item');
+                return item.clientWidth + 20; // clientWidth + el gap (20px)
+            };
+
+            btnNext.addEventListener('click', () => {
+                carousel.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+            });
+
+            btnPrev.addEventListener('click', () => {
+                carousel.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+            });
+        });
+    </script>
 </body>
 </html>
