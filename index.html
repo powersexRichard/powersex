@@ -197,7 +197,7 @@
             width: 100%;
         }
 
-        /* Proceso de Compra (Nequi/Daviplata) */
+        /* Proceso de Compra */
         .payment-box {
             background-color: #0d1a0d;
             border: 2px solid #25D366;
@@ -300,7 +300,7 @@
             right: 0;
         }
 
-        /* Reproductor de Video Secuencial */
+        /* Reproductor de Video Único */
         .video-gallery-container {
             max-width: 600px;
             margin: 0 auto 40px auto;
@@ -314,15 +314,6 @@
         .video-gallery-container video {
             width: 100%;
             display: block;
-        }
-
-        .video-indicator {
-            background-color: #1a1a1a;
-            color: #d4af37;
-            padding: 10px;
-            text-align: center;
-            font-weight: bold;
-            border-top: 1px solid #333;
         }
 
         hr { border: 1px solid #333; margin: 40px 0; }
@@ -438,20 +429,16 @@
             </div>
         </section>
 
-        <!-- SECCIÓN NUEVA: GALERÍA DE VIDEOS (Reproducción Continua y con Controles) -->
+        <!-- SECCIÓN DE VIDEO ÚNICO (Con Controles) -->
         <section>
             <h2>🎥 Conoce Más de Power Sex</h2>
-            <p>Mira nuestra galería en video. (Puedes pausar y ajustar el volumen desde los controles del video)</p>
+            <p>Toca el video y ajusta el volumen para escuchar todos los detalles.</p>
             
             <div class="video-gallery-container">
-                <!-- Se añade el atributo 'controls' para volumen y pausa -->
-                <video id="playlist-video" controls autoplay muted playsinline>
+                <video controls autoplay muted playsinline>
                     <source src="WhatsApp Video 2026-09-02 at 3.49.05 PM.mp4" type="video/mp4">
                     Tu navegador no soporta el video.
                 </video>
-                <div class="video-indicator" id="video-counter">
-                    Reproduciendo Video 1 de 2
-                </div>
             </div>
         </section>
 
@@ -472,11 +459,11 @@
         </div>
     </footer>
 
-    <!-- Scripts de la página -->
+    <!-- Script de la página (Solo Carrusel) -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             
-            // 1. SCRIPT PARA EL CARRUSEL DE FOTOS
+            // SCRIPT PARA EL CARRUSEL DE FOTOS
             const carousel = document.getElementById('gallery-carousel');
             const btnPrev = document.getElementById('btn-prev');
             const btnNext = document.getElementById('btn-next');
@@ -493,38 +480,6 @@
             btnPrev.addEventListener('click', () => {
                 carousel.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
             });
-
-
-            // 2. SCRIPT PARA LA LISTA DE REPRODUCCIÓN DE VIDEOS
-            const videoElement = document.getElementById('playlist-video');
-            const videoCounter = document.getElementById('video-counter');
-            
-            // Aquí puedes agregar todos los nombres de los videos que quieras reproducir en orden
-            const videos = [
-                'WhatsApp Video 2026-09-02 at 3.49.05 PM.mp4',
-                'WhatsApp Video 2026-09-02 at 3.54.02 PM.mp4'
-            ];
-            
-            let currentVideoIndex = 0;
-
-            if (videoElement) {
-                // Cuando el video termina, pasa al siguiente
-                videoElement.addEventListener('ended', function() {
-                    currentVideoIndex++;
-                    
-                    // Si llega al final de la lista, vuelve al primero (Bucle infinito)
-                    if (currentVideoIndex >= videos.length) {
-                        currentVideoIndex = 0; 
-                    }
-                    
-                    // Cambia el archivo del video y actualiza el texto
-                    videoElement.src = videos[currentVideoIndex];
-                    videoCounter.innerText = 'Reproduciendo Video ' + (currentVideoIndex + 1) + ' de ' + videos.length;
-                    
-                    // Asegura que empiece a reproducirse automáticamente
-                    videoElement.play();
-                });
-            }
             
         });
     </script>
