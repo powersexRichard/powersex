@@ -58,6 +58,7 @@
             color: #fff;
         }
 
+        /* Hero Section & Video */
         .hero {
             text-align: center;
             padding: 40px 20px;
@@ -75,18 +76,44 @@
             color: #d4af37;
         }
 
+        .hero-video {
+            width: 100%;
+            max-width: 350px;
+            border-radius: 15px;
+            border: 3px solid #d4af37;
+            margin-top: 20px;
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Recorte inteligente de Capturas (Cropping) */
+        .img-wrapper {
+            width: 100%;
+            aspect-ratio: 4 / 5; /* Proporción para mantener las fotos cuadradas/rectangulares */
+            overflow: hidden;
+            border-radius: 10px;
+            border: 2px solid #333;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            position: relative;
+            background-color: #000;
+        }
+
+        .img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: scale(1.25); /* Este zoom es el que esconde la interfaz del celular */
+            transition: transform 0.3s;
+        }
+        
+        .img-wrapper.desktop-crop img {
+            transform: scale(1.15) translateY(5%); /* Ajuste específico para esconder las pestañas del navegador en PC */
+        }
+
         .image-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
             margin: 30px 0;
-        }
-
-        .image-grid img {
-            width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-            border: 2px solid #333;
         }
 
         .feature-box {
@@ -108,6 +135,7 @@
             margin-bottom: 10px;
         }
 
+        /* Combos */
         .combos-grid {
             display: flex;
             gap: 20px;
@@ -152,12 +180,6 @@
             font-size: 0.9rem;
         }
 
-        .combo-title {
-            font-size: 1.8rem;
-            color: #ffffff;
-            margin-bottom: 10px;
-        }
-
         .combo-price {
             font-size: 2.5rem;
             font-weight: 900;
@@ -178,28 +200,27 @@
             width: 100%;
         }
 
-        .process {
-            background-color: #141414;
-            padding: 40px 20px;
+        /* Proceso de Compra (Nequi/Daviplata) */
+        .payment-box {
+            background-color: #0d1a0d;
+            border: 2px solid #25D366;
+            padding: 25px;
             border-radius: 10px;
             margin: 40px 0;
-            border: 1px dashed #d4af37;
+            text-align: center;
         }
 
-        .alert-box {
-            background-color: #1a0000;
-            border-left: 5px solid #ff3333;
-            padding: 15px;
-            margin-bottom: 20px;
+        .payment-box h3 {
+            color: #25D366;
+            margin-top: 0;
+        }
+
+        .payment-box span.highlight {
+            background-color: #d4af37;
+            color: #000;
+            padding: 3px 8px;
             border-radius: 5px;
-        }
-
-        .trust-banner {
-            background: #0a0a0a;
-            border: 1px solid #333;
-            padding: 20px;
-            border-radius: 10px;
-            margin: 30px 0;
+            font-weight: bold;
         }
 
         hr { border: 1px solid #333; margin: 40px 0; }
@@ -211,8 +232,17 @@
         <div class="container">
             <h3 style="color: #ff3333; margin-bottom: 5px;">📍 HEROXIX MEDELLÍN</h3>
             <h1>Tu Potencializador Sexual de Confianza</h1>
-            <p>La potente "Píldora del Amor" diseñada para mejorar el rendimiento en <strong>hombres y mujeres</strong>. Ideal para quienes buscan experiencias más intensas y placenteras.</p>
-            <img src="WhatsApp Image 2026-09-02 at 3.49.01 PM.jpeg" alt="Caja Power Sex" style="max-width: 100%; border-radius: 10px; margin-top: 20px; border: 2px solid #d4af37;">
+            <p>La potente "Píldora del Amor" diseñada para mejorar el rendimiento. Ideal para quienes buscan experiencias más intensas y placenteras.</p>
+            
+            <!-- Video en Portada -->
+            <video autoplay loop muted playsinline class="hero-video">
+                <source src="WhatsApp Video 2026-09-02 at 3.49.05 PM.mp4" type="video/mp4">
+                Tu navegador no soporta el video.
+            </video>
+
+            <a href="#combos" class="btn-whatsapp">
+                👉 ¡VER COMBOS Y PEDIR AHORA!
+            </a>
         </div>
     </header>
 
@@ -231,9 +261,10 @@
         <section>
             <h2>Tips para antes del delicioso</h2>
             <div class="image-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
-                <img src="WhatsApp Image 2026-09-02 at 3.49.03 PM (3).jpeg" alt="Tips">
-                <img src="WhatsApp Image 2026-09-02 at 3.49.03 PM (1).jpeg" alt="Aséate">
-                <img src="WhatsApp Image 2026-09-02 at 3.49.03 PM (2).jpeg" alt="Toma un PowerSex 30 minutos antes">
+                <!-- Se recorta la captura con .img-wrapper -->
+                <div class="img-wrapper"><img src="WhatsApp Image 2026-09-02 at 3.49.03 PM (3).jpeg" alt="Tips"></div>
+                <div class="img-wrapper"><img src="WhatsApp Image 2026-09-02 at 3.49.03 PM (1).jpeg" alt="Aséate"></div>
+                <div class="img-wrapper"><img src="WhatsApp Image 2026-09-02 at 3.49.03 PM (2).jpeg" alt="Toma un PowerSex 30 minutos antes"></div>
             </div>
         </section>
 
@@ -246,67 +277,66 @@
             <div class="combos-grid">
                 
                 <div class="combo-card">
-                    <h3 class="combo-title">Combo 1</h3>
+                    <h3 style="font-size: 1.8rem; color: #fff; margin:0;">Combo 1</h3>
                     <p style="color: #d4af37; font-weight: bold;">SOLO PASTILLAS 💪</p>
                     <p>✓ 12 pastillas 💊 Powersex</p>
-                    <p>🎁 <strong>BONO:</strong> 30% Descuento en Motel</p>
+                    <p>🎁 <strong>BONO:</strong> 30% Dto en Motel</p>
                     <div class="combo-price">$20.000</div>
-                    <a href="https://wa.me/573012304916?text=Hola,%20vengo%20de%20la%20página%20web%20y%20quiero%20pedir%20el%20*COMBO%201%20($20.000)*.%0A%0AMis%20datos%20son:%0A-%20Nombre:%20%0A-%20Dirección:%20%0A-%20Barrio:%20%0A-%20WhatsApp:%20" class="btn-whatsapp" target="_blank">
-                        🛵 Pedir Combo 1
-                    </a>
+                    <a href="https://wa.me/573012304916?text=Hola,%20quiero%20pedir%20el%20*COMBO%201%20($20.000)*.%0AMis%20datos:%0A-Nombre:%0A-Dirección:%0A-Barrio:%0A-WhatsApp:" class="btn-whatsapp" target="_blank">🛵 Pedir Combo 1</a>
                 </div>
 
                 <div class="combo-card popular">
                     <div class="badge">🔥 EL MÁS LLEVADO</div>
-                    <h3 class="combo-title">Combo 2</h3>
+                    <h3 style="font-size: 1.8rem; color: #fff; margin:0;">Combo 2</h3>
                     <p style="color: #ff3333; font-weight: bold;">SOLO PASTILLAS 🚀😈</p>
                     <p>✓ 20 pastillas 💊 Powersex</p>
-                    <p>🎁 <strong>BONO:</strong> 33% Descuento en Motel Roxi</p>
+                    <p>🎁 <strong>BONO:</strong> 33% Dto en Motel Roxi</p>
                     <div class="combo-price">$30.000</div>
-                    <a href="https://wa.me/573012304916?text=Hola,%20vengo%20de%20la%20página%20web%20y%20quiero%20pedir%20el%20*COMBO%202%20($30.000)*.%0A%0AMis%20datos%20son:%0A-%20Nombre:%20%0A-%20Dirección:%20%0A-%20Barrio:%20%0A-%20WhatsApp:%20" class="btn-whatsapp" target="_blank" style="background-color: #ff3333;">
-                        🛵 Pedir Combo 2
-                    </a>
+                    <a href="https://wa.me/573012304916?text=Hola,%20quiero%20pedir%20el%20*COMBO%202%20($30.000)*.%0AMis%20datos:%0A-Nombre:%0A-Dirección:%0A-Barrio:%0A-WhatsApp:" class="btn-whatsapp" target="_blank" style="background-color: #ff3333;">🛵 Pedir Combo 2</a>
                 </div>
 
                 <div class="combo-card">
-                    <h3 class="combo-title">Combo 3</h3>
-                    <p style="color: #d4af37; font-weight: bold;">¡PA' LA FINCA DE FIESTA! 💨</p>
+                    <h3 style="font-size: 1.8rem; color: #fff; margin:0;">Combo 3</h3>
+                    <p style="color: #d4af37; font-weight: bold;">¡PA' LA FINCA! 💨</p>
                     <p>✓ 60 pastillas 💊 Powersex</p>
                     <p>🎁 <strong>BONO:</strong> 1 Bono de Motel</p>
                     <div class="combo-price">$60.000</div>
-                    <a href="https://wa.me/573012304916?text=Hola,%20vengo%20de%20la%20página%20web%20y%20quiero%20pedir%20el%20*COMBO%203%20($60.000)*.%0A%0AMis%20datos%20son:%0A-%20Nombre:%20%0A-%20Dirección:%20%0A-%20Barrio:%20%0A-%20WhatsApp:%20" class="btn-whatsapp" target="_blank">
-                        🛵 Pedir Combo 3
-                    </a>
+                    <a href="https://wa.me/573012304916?text=Hola,%20quiero%20pedir%20el%20*COMBO%203%20($60.000)*.%0AMis%20datos:%0A-Nombre:%0A-Dirección:%0A-Barrio:%0A-WhatsApp:" class="btn-whatsapp" target="_blank">🛵 Pedir Combo 3</a>
                 </div>
 
             </div>
         </section>
 
-        <section class="process">
-            <h2 style="text-align: center;">🤫 Discreción y Rapidez Absoluta</h2>
-            <div class="alert-box">
-                <p style="margin: 0; color: #fff; text-align: left;"><strong>⚡ ENTREGA RÁPIDA:</strong> Tu pedido será entregado en el transcurso de HOY A MAÑANA. El domiciliario se contactará contigo para coordinar la entrega.</p>
-            </div>
-            
-            <p style="font-size: 1.2rem; color: #d4af37; font-weight: bold;">📦 EL PAQUETE VA SELLADO.</p>
-            <p style="font-size: 1.2rem; color: #d4af37; font-weight: bold;">👌🏻 SIN MARCAS.</p>
-            <p style="font-size: 1.2rem; color: #d4af37; font-weight: bold;">👀 MUY DISCRETO.</p>
+        <!-- PAGO Y ENVÍO DEL COMPROBANTE -->
+        <section class="payment-box">
+            <h3>💳 Pago Rápido, Seguro y Efectivo</h3>
+            <p>Haz tu pedido rápido sin salir de casa. Aceptamos giros y transferencias vía <span class="highlight">Nequi</span> o <span class="highlight">Daviplata / A la mano</span>.</p>
+            <p style="color: #fff; font-size: 1.2rem;"><strong>1.</strong> Elige tu combo y escríbenos al WhatsApp.<br>
+            <strong>2.</strong> Realiza el giro a los datos que te daremos.<br>
+            <strong>3.</strong> 📸 <strong>¡Súper Importante!</strong> Envíanos el <strong>comprobante o pantallazo</strong> del pago por el chat.</p>
+            <p style="color: #d4af37;"><em>Una vez recibido tu comprobante, despachamos tu pedido inmediatamente.</em></p>
         </section>
 
         <section>
-            <h2>Clientes 100% Satisfechos</h2>
+            <h2>🤫 Discreción y Clientes Satisfechos</h2>
+            <p>📦 Paquetes sellados, sin logos. Entrega rápida de hoy a mañana.</p>
+            
             <div class="image-grid">
-                <img src="WhatsApp Image 2026-09-02 at 3.49.02 PM (1).jpeg" alt="Cliente feliz">
-                <img src="WhatsApp Image 2026-09-02 at 3.49.02 PM (2).jpeg" alt="Envío efectivo">
-                <img src="WhatsApp Image 2026-09-02 at 3.49.02 PM (4).jpeg" alt="Cliente satisfecho">
+                <!-- Se recortan las capturas de WhatsApp para que solo se vea la foto y el mensaje, ocultando teclados y cabeceras -->
+                <div class="img-wrapper"><img src="WhatsApp Image 2026-09-02 at 3.49.02 PM (1).jpeg" alt="Cliente feliz"></div>
+                <div class="img-wrapper"><img src="WhatsApp Image 2026-09-02 at 3.49.02 PM (2).jpeg" alt="Envío efectivo"></div>
+                <div class="img-wrapper"><img src="WhatsApp Image 2026-09-02 at 3.49.02 PM (4).jpeg" alt="Cliente satisfecho"></div>
             </div>
         </section>
 
-        <!-- SECCIÓN DE CONFIANZA Y RESPALDO TÉCNICO -->
-        <section class="trust-banner">
+        <!-- SECCIÓN DE CONFIANZA TÉCNICA RE-ENCUADRADA -->
+        <section class="feature-box">
             <h2>Transparencia y Respaldo en Cada Despacho</h2>
-            <p>Contamos con un sistema organizado de registro y control para garantizar que cada pedido llegue a su destino de forma segura. Nuestra infraestructura digital respalda el volumen de despachos diarios a nivel nacional.</p>
-            <img src="image_95f0cb.png" alt="Registro de sistema y despachos" style="width: 100%; border-radius: 10px; margin-top: 15px; border: 2px solid #333;">
+            <p>Contamos con un sistema organizado para garantizar que cada pedido llegue a su destino. Nuestra infraestructura respalda nuestros despachos diarios.</p>
+            <!-- Recorte especial para la imagen de escritorio de GitHub (esconde pestañas y menús) -->
+            <div class="img-wrapper desktop-crop" style="aspect-ratio: 16/9; margin-top: 20px;">
+                <img src="image_95f0cb.png" alt="Registro de sistema y despachos">
+            </div>
         </section>
 
     </div>
@@ -319,7 +349,10 @@
             <a href="#combos" class="btn-whatsapp" style="font-size: 1.4rem;">
                 🔥 VER COMBOS Y PEDIR POR WHATSAPP
             </a>
-            <img src="WhatsApp Image 2026-09-02 at 3.49.01 PM (1).jpeg" alt="Caja con productos Power Sex" style="width: 100%; max-width: 400px; margin: 30px auto 0 auto; display: block; border-radius: 10px;">
+            
+            <div class="img-wrapper" style="max-width: 400px; margin: 30px auto 0; aspect-ratio: 1/1;">
+                <img src="WhatsApp Image 2026-09-02 at 3.49.01 PM (1).jpeg" alt="Caja con productos Power Sex">
+            </div>
         </div>
     </footer>
 
