@@ -88,7 +88,7 @@
         /* Recorte inteligente de Capturas (Cropping) */
         .img-wrapper {
             width: 100%;
-            aspect-ratio: 4 / 5; /* Proporción para mantener las fotos cuadradas/rectangulares */
+            aspect-ratio: 4 / 5;
             overflow: hidden;
             border-radius: 10px;
             border: 2px solid #333;
@@ -101,12 +101,8 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transform: scale(1.25); /* Este zoom es el que esconde la interfaz del celular */
+            transform: scale(1.25);
             transition: transform 0.3s;
-        }
-        
-        .img-wrapper.desktop-crop img {
-            transform: scale(1.15) translateY(5%); /* Ajuste específico para esconder las pestañas del navegador en PC */
         }
 
         .image-grid {
@@ -223,6 +219,17 @@
             font-weight: bold;
         }
 
+        /* Video de Respaldo */
+        .trust-video {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 10px;
+            margin: 20px auto 0;
+            display: block;
+            border: 2px solid #333;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+
         hr { border: 1px solid #333; margin: 40px 0; }
     </style>
 </head>
@@ -234,7 +241,6 @@
             <h1>Tu Potencializador Sexual de Confianza</h1>
             <p>La potente "Píldora del Amor" diseñada para mejorar el rendimiento. Ideal para quienes buscan experiencias más intensas y placenteras.</p>
             
-            <!-- Video en Portada -->
             <video autoplay loop muted playsinline class="hero-video">
                 <source src="WhatsApp Video 2026-09-02 at 3.49.05 PM.mp4" type="video/mp4">
                 Tu navegador no soporta el video.
@@ -261,7 +267,6 @@
         <section>
             <h2>Tips para antes del delicioso</h2>
             <div class="image-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
-                <!-- Se recorta la captura con .img-wrapper -->
                 <div class="img-wrapper"><img src="WhatsApp Image 2026-09-02 at 3.49.03 PM (3).jpeg" alt="Tips"></div>
                 <div class="img-wrapper"><img src="WhatsApp Image 2026-09-02 at 3.49.03 PM (1).jpeg" alt="Aséate"></div>
                 <div class="img-wrapper"><img src="WhatsApp Image 2026-09-02 at 3.49.03 PM (2).jpeg" alt="Toma un PowerSex 30 minutos antes"></div>
@@ -311,10 +316,12 @@
         <section class="payment-box">
             <h3>💳 Pago Rápido, Seguro y Efectivo</h3>
             <p>Haz tu pedido rápido sin salir de casa. Aceptamos giros y transferencias vía <span class="highlight">Nequi</span> o <span class="highlight">Daviplata / A la mano</span>.</p>
-            <p style="color: #fff; font-size: 1.2rem;"><strong>1.</strong> Elige tu combo y escríbenos al WhatsApp.<br>
+            <p style="color: #fff; font-size: 1.2rem; text-align: left; display: inline-block;">
+            <strong>1.</strong> Elige tu combo y escríbenos al WhatsApp.<br>
             <strong>2.</strong> Realiza el giro a los datos que te daremos.<br>
-            <strong>3.</strong> 📸 <strong>¡Súper Importante!</strong> Envíanos el <strong>comprobante o pantallazo</strong> del pago por el chat.</p>
-            <p style="color: #d4af37;"><em>Una vez recibido tu comprobante, despachamos tu pedido inmediatamente.</em></p>
+            <strong>3.</strong> 📸 <strong>¡Súper Importante!</strong> Envíanos el <strong>comprobante o pantallazo</strong> del pago por el chat.
+            </p>
+            <p style="color: #d4af37; margin-top: 15px;"><em>Una vez recibido tu comprobante, despachamos tu pedido inmediatamente.</em></p>
         </section>
 
         <section>
@@ -322,21 +329,21 @@
             <p>📦 Paquetes sellados, sin logos. Entrega rápida de hoy a mañana.</p>
             
             <div class="image-grid">
-                <!-- Se recortan las capturas de WhatsApp para que solo se vea la foto y el mensaje, ocultando teclados y cabeceras -->
                 <div class="img-wrapper"><img src="WhatsApp Image 2026-09-02 at 3.49.02 PM (1).jpeg" alt="Cliente feliz"></div>
                 <div class="img-wrapper"><img src="WhatsApp Image 2026-09-02 at 3.49.02 PM (2).jpeg" alt="Envío efectivo"></div>
                 <div class="img-wrapper"><img src="WhatsApp Image 2026-09-02 at 3.49.02 PM (4).jpeg" alt="Cliente satisfecho"></div>
             </div>
         </section>
 
-        <!-- SECCIÓN DE CONFIANZA TÉCNICA RE-ENCUADRADA -->
+        <!-- VIDEO FINAL DE RESPALDO (NUEVO) -->
         <section class="feature-box">
             <h2>Transparencia y Respaldo en Cada Despacho</h2>
             <p>Contamos con un sistema organizado para garantizar que cada pedido llegue a su destino. Nuestra infraestructura respalda nuestros despachos diarios.</p>
-            <!-- Recorte especial para la imagen de escritorio de GitHub (esconde pestañas y menús) -->
-            <div class="img-wrapper desktop-crop" style="aspect-ratio: 16/9; margin-top: 20px;">
-                <img src="image_95f0cb.png" alt="Registro de sistema y despachos">
-            </div>
+            
+            <video autoplay loop muted playsinline class="trust-video">
+                <source src="WhatsApp Video 2026-09-02 at 3.54.02 PM.mp4" type="video/mp4">
+                Tu navegador no soporta el video.
+            </video>
         </section>
 
     </div>
