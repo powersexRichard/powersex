@@ -74,7 +74,7 @@
             color: #fff;
         }
 
-        /* Hero Section & Video */
+        /* Hero Section & Videos */
         .hero {
             text-align: center;
             padding: 40px 20px;
@@ -92,16 +92,24 @@
             color: #d4af37;
         }
 
-        .hero-video {
-            width: 100%;
-            max-width: 350px;
-            border-radius: 15px;
-            border: 3px solid #d4af37;
+        .hero-videos-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
             margin-top: 20px;
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
         }
 
-        /* Recorte inteligente de imágenes */
+        .hero-video {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 15px;
+            border: 3px solid #d4af37;
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+            background-color: #000;
+        }
+
+        /* Imágenes y Mini Carruseles de Tarjetas */
         .img-wrapper {
             width: 100%;
             aspect-ratio: 4 / 3;
@@ -117,6 +125,57 @@
             height: 100%;
             object-fit: cover;
         }
+
+        .card-carousel-container {
+            position: relative;
+            width: 100%;
+            margin-bottom: 15px;
+        }
+
+        .card-carousel {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            scrollbar-width: none;
+        }
+
+        .card-carousel::-webkit-scrollbar {
+            display: none;
+        }
+
+        .card-carousel-item {
+            scroll-snap-align: start;
+            flex: 0 0 100%;
+            width: 100%;
+        }
+
+        .card-btn {
+            position: absolute;
+            top: 45%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #d4af37;
+            border: 1px solid #d4af37;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            transition: background 0.2s;
+        }
+
+        .card-btn:hover {
+            background-color: #d4af37;
+            color: #000;
+        }
+
+        .card-btn.prev { left: 5px; }
+        .card-btn.next { right: 5px; }
 
         .image-grid {
             display: grid;
@@ -145,7 +204,7 @@
             margin-bottom: 10px;
         }
 
-        /* Combos Grid limpio */
+        /* Combos Grid */
         .combos-grid {
             display: flex;
             gap: 25px;
@@ -158,7 +217,7 @@
             background: linear-gradient(145deg, #1f1f1f, #121212);
             border: 2px solid #d4af37;
             border-radius: 15px;
-            padding: 25px 20px;
+            padding: 20px;
             width: 100%;
             max-width: 330px;
             text-align: center;
@@ -195,12 +254,12 @@
             font-size: 2.2rem;
             font-weight: 900;
             color: #d4af37;
-            margin: 15px 0;
+            margin: 10px 0;
         }
 
         .combo-card p {
             font-size: 0.95rem;
-            margin: 8px 0;
+            margin: 6px 0;
             color: #eaeaea;
             text-align: left;
         }
@@ -220,7 +279,7 @@
             margin-top: 0;
         }
 
-        /* Carruseles Generales */
+        /* Carrusel General de Clientes */
         .carousel-container {
             position: relative;
             max-width: 100%;
@@ -303,15 +362,21 @@
 
     <header class="hero">
         <div class="container">
-            <h3 style="color: #ff3333; margin-bottom: 5px;">📍 HEROXIX MEDELLÍN</h3>
-            <h1>Tu Potencializador Sexual de Confianza</h1>
-            <p>La potente "Píldora del Amor" y líquidos diseñados para mejorar el rendimiento. Envío seguro a todo Colombia.</p>
+            <h3 style="color: #ff3333; margin-bottom: 5px;">📍 HEROXIX MEDELLÍN[cite: 1]</h3>
+            <h1>Tu Potencializador Sexual de Confianza[cite: 1]</h1>
+            <p>La potente "Píldora del Amor"[cite: 1] y líquidos[cite: 1] diseñados para mejorar el rendimiento[cite: 1]. Envío seguro a todo Colombia[cite: 1].</p>
             
-            <video autoplay loop muted playsinline class="hero-video">
-                <source src="WhatsApp Video 2026-09-02 at 3.49.05 PM.mp4" type="video/mp4">
-            </video>
+            <!-- Videos principales arriba en la portada -->
+            <div class="hero-videos-container">
+                <video controls autoplay loop playsinline class="hero-video" id="top-audio-video">
+                    <source src="WhatsApp Video 2026-09-02 at 3.54.02 PM.mp4" type="video/mp4">
+                </video>
+                <video autoplay loop muted playsinline class="hero-video">
+                    <source src="WhatsApp Video 2026-09-02 at 3.49.05 PM.mp4" type="video/mp4">
+                </video>
+            </div>
 
-            <a href="#combos" class="btn-whatsapp" style="max-width: 450px;">
+            <a href="#combos" class="btn-whatsapp" style="max-width: 450px; margin-top: 30px;">
                 👉 ¡VER LOS 6 COMBOS Y PEDIR!
             </a>
         </div>
@@ -320,91 +385,118 @@
     <div class="container">
         
         <section class="feature-box">
-            <h2>🔥 Beneficios Clave</h2>
+            <h2>🔥 Beneficios Clave[cite: 1]</h2>
             <ul>
-                <li>✅ <strong>Aumenta el deseo sexual:</strong> Disposición inmediata.</li>
-                <li>✅ <strong>Mejora la duración y el rendimiento:</strong> Noches sin fin.</li>
-                <li>✅ <strong>Incrementa la energía y el placer:</strong> Sensaciones más intensas.</li>
-                <li>✅ <strong>Potente para ambos sexos:</strong> Diseñado para él y para ella.</li>
+                <li>✅ <strong>Aumenta el deseo sexual:</strong> Disposición inmediata[cite: 1].</li>
+                <li>✅ <strong>Mejora la duración y el rendimiento:</strong> Noches sin fin[cite: 1].</li>
+                <li>✅ <strong>Incrementa la energía y el placer:</strong> Sensaciones más intensas[cite: 1].</li>
+                <li>✅ <strong>Potente para ambos sexos:</strong> Diseñado para él y para ella[cite: 1].</li>
             </ul>
         </section>
 
         <section>
             <h2>Tips para antes del delicioso</h2>
             <div class="image-grid">
-                <div class="img-wrapper"><img src="WhatsApp Image 2026-09-02 at 3.49.03 PM (3).jpeg" alt="Tips"></div>
-                <div class="img-wrapper"><img src="WhatsApp Image 2026-09-02 at 3.49.03 PM (1).jpeg" alt="Aséate"></div>
-                <div class="img-wrapper"><img src="WhatsApp Image 2026-09-02 at 3.49.03 PM (2).jpeg" alt="Toma un PowerSex 30 minutos antes"></div>
+                <div class="img-wrapper" style="aspect-ratio: 4/5;"><img src="WhatsApp Image 2026-09-02 at 3.49.03 PM (3).jpeg" alt="Tips"></div>
+                <div class="img-wrapper" style="aspect-ratio: 4/5;"><img src="WhatsApp Image 2026-09-02 at 3.49.03 PM (1).jpeg" alt="Aséate"></div>
+                <div class="img-wrapper" style="aspect-ratio: 4/5;"><img src="WhatsApp Image 2026-09-02 at 3.49.03 PM (2).jpeg" alt="Toma un PowerSex 30 minutos antes"></div>
             </div>
         </section>
 
         <hr>
 
-        <!-- SECCIÓN DE 6 COMBOS -->
+        <!-- SECCIÓN DE 6 COMBOS CON FOTOS Y CARRUSELES ESPECÍFICOS -->
         <section id="combos">
-            <h2>🔥 ¡Tenemos 6 increíbles Combos! 👀 🧐</h2>
-            <p>Elige tu combo favorito en pastillas o líquidos. ¡Absoluta reserva!</p>
+            <h2>🔥 ¡Tenemos 6 increíbles Combos! 👀 🧐[cite: 1]</h2>
+            <p>Elige tu combo favorito en pastillas o líquidos. ¡Absoluta reserva![cite: 1]</p>
             
             <div class="combos-grid">
                 
-                <!-- COMBO 1 -->
+                <!-- COMBO 1 (Con carrusel de fotos) -->
                 <div class="combo-card">
-                    <h3 style="font-size: 1.4rem; color: #fff; margin:0 0 10px 0;">Combo 1</h3>
-                    <p style="color: #d4af37; font-weight: bold; text-align: center;">SOLO PASTILLAS 💊</p>
-                    <p>✓ 16 Pastillas Powersex</p>
-                    <p>🎁 <strong>BONO:</strong> 30% Dto en Motel (Medellín)</p>
-                    <div class="combo-price">$20.000</div>
+                    <div class="card-carousel-container">
+                        <button class="card-btn prev" onclick="slideCard(this, -1)">&#10094;</button>
+                        <div class="card-carousel">
+                            <div class="card-carousel-item"><div class="img-wrapper"><img src="combo1.jpeg" alt="Combo 1"></div></div>
+                            <div class="card-carousel-item"><div class="img-wrapper"><img src="pwr.jpeg" alt="Powersex Extra 1"></div></div>
+                        </div>
+                        <button class="card-btn next" onclick="slideCard(this, 1)">&#10095;</button>
+                    </div>
+                    <h3 style="font-size: 1.4rem; color: #fff; margin:5px 0;">Combo 1[cite: 1]</h3>
+                    <p style="color: #d4af37; font-weight: bold; text-align: center;">SOLO PASTILLAS 💊[cite: 1]</p>
+                    <p>✓ 16 Pastillas Powersex[cite: 1]</p>
+                    <p>🎁 <strong>BONO:</strong> 30% Dto en Motel (Medellín)[cite: 1]</p>
+                    <div class="combo-price">$20.000[cite: 1]</div>
                     <a href="https://wa.me/573128580134?text=Hola,%20quiero%20pedir%20el%20*COMBO%201%20($20.000)*.%0AMis%20datos:%0A-Nombre:%0A-Dirección:%0A-Barrio:%0A-WhatsApp:" class="btn-whatsapp" target="_blank">🛵 Pedir Combo 1</a>
                 </div>
 
-                <!-- COMBO 2 -->
+                <!-- COMBO 2 (Con carrusel de fotos) -->
                 <div class="combo-card popular">
                     <div class="badge">🔥 RECOMENDADO</div>
-                    <h3 style="font-size: 1.4rem; color: #fff; margin:0 0 10px 0;">Combo 2</h3>
-                    <p style="color: #ff3333; font-weight: bold; text-align: center;">SOLO PASTILLAS 🚀</p>
-                    <p>✓ 24 Pastillas Powersex</p>
-                    <p>🎁 <strong>BONO:</strong> 30% Dto en Motel (Medellín)</p>
-                    <div class="combo-price">$30.000</div>
+                    <div class="card-carousel-container">
+                        <button class="card-btn prev" onclick="slideCard(this, -1)">&#10094;</button>
+                        <div class="card-carousel">
+                            <div class="card-carousel-item"><div class="img-wrapper"><img src="combo2.jpeg" alt="Combo 2"></div></div>
+                            <div class="card-carousel-item"><div class="img-wrapper"><img src="pwr1.jpeg" alt="Powersex Extra 2"></div></div>
+                        </div>
+                        <button class="card-btn next" onclick="slideCard(this, 1)">&#10095;</button>
+                    </div>
+                    <h3 style="font-size: 1.4rem; color: #fff; margin:5px 0;">Combo 2[cite: 1]</h3>
+                    <p style="color: #ff3333; font-weight: bold; text-align: center;">SOLO PASTILLAS 🚀[cite: 1]</p>
+                    <p>✓ 24 Pastillas Powersex[cite: 1]</p>
+                    <p>🎁 <strong>BONO:</strong> 30% Dto en Motel (Medellín)[cite: 1]</p>
+                    <div class="combo-price">$30.000[cite: 1]</div>
                     <a href="https://wa.me/573128580134?text=Hola,%20quiero%20pedir%20el%20*COMBO%202%20($30.000)*.%0AMis%20datos:%0A-Nombre:%0A-Dirección:%0A-Barrio:%0A-WhatsApp:" class="btn-whatsapp" target="_blank" style="background-color: #ff3333;">🛵 Pedir Combo 2</a>
                 </div>
 
-                <!-- COMBO 3 -->
+                <!-- COMBO 3 (Con carrusel de fotos) -->
                 <div class="combo-card">
-                    <h3 style="font-size: 1.4rem; color: #fff; margin:0 0 10px 0;">Combo 3</h3>
-                    <p style="color: #d4af37; font-weight: bold; text-align: center;">¡PA' LA FINCA! 💨</p>
-                    <p>✓ 60 Pastillas Powersex</p>
-                    <p>🎁 <strong>BONO:</strong> Bono de Motel Incluido</p>
-                    <div class="combo-price">$60.000</div>
+                    <div class="card-carousel-container">
+                        <button class="card-btn prev" onclick="slideCard(this, -1)">&#10094;</button>
+                        <div class="card-carousel">
+                            <div class="card-carousel-item"><div class="img-wrapper"><img src="combo3.jpeg" alt="Combo 3"></div></div>
+                            <div class="card-carousel-item"><div class="img-wrapper"><img src="pwr2.jpeg" alt="Powersex Extra 3"></div></div>
+                        </div>
+                        <button class="card-btn next" onclick="slideCard(this, 1)">&#10095;</button>
+                    </div>
+                    <h3 style="font-size: 1.4rem; color: #fff; margin:5px 0;">Combo 3[cite: 1]</h3>
+                    <p style="color: #d4af37; font-weight: bold; text-align: center;">¡PA' LA FINCA! 💨[cite: 1]</p>
+                    <p>✓ 60 Pastillas Powersex[cite: 1]</p>
+                    <p>🎁 <strong>BONO:</strong> Bono de Motel Incluido[cite: 1]</p>
+                    <div class="combo-price">$60.000[cite: 1]</div>
                     <a href="https://wa.me/573128580134?text=Hola,%20quiero%20pedir%20el%20*COMBO%203%20($60.000)*.%0AMis%20datos:%0A-Nombre:%0A-Dirección:%0A-Barrio:%0A-WhatsApp:" class="btn-whatsapp" target="_blank">🛵 Pedir Combo 3</a>
                 </div>
 
                 <!-- COMBO 4 (Líquidos) -->
                 <div class="combo-card">
-                    <h3 style="font-size: 1.4rem; color: #fff; margin:0 0 10px 0;">Combo 4</h3>
-                    <p style="color: #d4af37; font-weight: bold; text-align: center;">LÍQUIDO POWERSEX ⚡</p>
-                    <p>✓ 500ml (1 copa de 20ml, 40 min antes)</p>
-                    <p>🎁 <strong>Obsequio:</strong> 4 Pastillas + Bono Motel</p>
-                    <div class="combo-price">$45.000</div>
+                    <div class="img-wrapper"><img src="combo4.jpeg" alt="Combo 4"></div>
+                    <h3 style="font-size: 1.4rem; color: #fff; margin:10px 0 0 0;">Combo 4[cite: 1]</h3>
+                    <p style="color: #d4af37; font-weight: bold; text-align: center;">LÍQUIDO POWERSEX ⚡[cite: 1]</p>
+                    <p>✓ 500ml (1 copa de 20ml, 40 min antes)[cite: 1]</p>
+                    <p>🎁 <strong>Obsequio:</strong> 4 Pastillas + Bono Motel[cite: 1]</p>
+                    <div class="combo-price">$45.000[cite: 1]</div>
                     <a href="https://wa.me/573128580134?text=Hola,%20quiero%20pedir%20el%20*COMBO%204%20(PowerSex Líquido $45.000)*.%0AMis%20datos:%0A-Nombre:%0A-Dirección:%0A-Barrio:%0A-WhatsApp:" class="btn-whatsapp" target="_blank">🛵 Pedir Combo 4</a>
                 </div>
 
                 <!-- COMBO 5 (Líquidos) -->
                 <div class="combo-card">
-                    <h3 style="font-size: 1.4rem; color: #fff; margin:0 0 10px 0;">Combo 5</h3>
-                    <p style="color: #d4af37; font-weight: bold; text-align: center;">VITAFER LÍQUIDO 🌿</p>
-                    <p>✓ 500ml (Energía y rendimiento total)</p>
-                    <p>🎁 <strong>Obsequio:</strong> 4 Pastillas + Bono Motel</p>
-                    <div class="combo-price">$50.000</div>
+                    <div class="img-wrapper"><img src="combobi5.jpeg" alt="Combo 5"></div>
+                    <h3 style="font-size: 1.4rem; color: #fff; margin:10px 0 0 0;">Combo 5[cite: 1]</h3>
+                    <p style="color: #d4af37; font-weight: bold; text-align: center;">VITAFER LÍQUIDO 🌿[cite: 1]</p>
+                    <p>✓ 500ml (Energía y rendimiento total)[cite: 1]</p>
+                    <p>🎁 <strong>Obsequio:</strong> 4 Pastillas + Bono Motel[cite: 1]</p>
+                    <div class="combo-price">$50.000[cite: 1]</div>
                     <a href="https://wa.me/573128580134?text=Hola,%20quiero%20pedir%20el%20*COMBO%205%20(Vitafer $50.000)*.%0AMis%20datos:%0A-Nombre:%0A-Dirección:%0A-Barrio:%0A-WhatsApp:" class="btn-whatsapp" target="_blank">🛵 Pedir Combo 5</a>
                 </div>
 
                 <!-- COMBO 6 (Líquidos) -->
                 <div class="combo-card">
-                    <h3 style="font-size: 1.4rem; color: #fff; margin:0 0 10px 0;">Combo 6</h3>
-                    <p style="color: #d4af37; font-weight: bold; text-align: center;">MERO MACHO LÍQUIDO 💪</p>
-                    <p>✓ 500ml (Potencia pura tradicional)</p>
-                    <p>🎁 <strong>Obsequio:</strong> 4 Pastillas + Bono Motel</p>
-                    <div class="combo-price">$50.000</div>
+                    <div class="img-wrapper"><img src="combo6.jpeg" alt="Combo 6"></div>
+                    <h3 style="font-size: 1.4rem; color: #fff; margin:10px 0 0 0;">Combo 6[cite: 1]</h3>
+                    <p style="color: #d4af37; font-weight: bold; text-align: center;">MERO MACHO LÍQUIDO 💪[cite: 1]</p>
+                    <p>✓ 500ml (Potencia pura tradicional)[cite: 1]</p>
+                    <p>🎁 <strong>Obsequio:</strong> 4 Pastillas + Bono Motel[cite: 1]</p>
+                    <div class="combo-price">$50.000[cite: 1]</div>
                     <a href="https://wa.me/573128580134?text=Hola,%20quiero%20pedir%20el%20*COMBO%206%20(Mero Macho $50.000)*.%0AMis%20datos:%0A-Nombre:%0A-Dirección:%0A-Barrio:%0A-WhatsApp:" class="btn-whatsapp" target="_blank">🛵 Pedir Combo 6</a>
                 </div>
 
@@ -413,31 +505,17 @@
 
         <!-- PAGO Y ENVÍO -->
         <section class="payment-box">
-            <h3>📦 Envíos Seguros y Contra Entrega</h3>
+            <h3>📦 Envíos Seguros y Contra Entrega[cite: 1]</h3>
             <p style="color: #fff; font-size: 1.1rem;">
-            ✓ <strong>Medellín y Área Metropolitana:</strong> Pago contra entrega con domiciliario (consulta con el asesor). Entregas rápidas de hoy a mañana.<br>
-            ✓ <strong>Todo Colombia:</strong> Envíos seguros a nivel nacional a través de <strong>Interrapidísimo</strong> 🛴💭.<br>
-            🤫 <em>Paquetes 100% sellados, sin marcas y muy discretos.</em>
+            ✓ <strong>Medellín y Área Metropolitana:</strong> Pago contra entrega con domiciliario (consulta con el asesor)[cite: 1]. Entregas rápidas de hoy a mañana[cite: 1].<br>
+            ✓ <strong>Todo Colombia:</strong> Envíos seguros a nivel nacional a través de <strong>Interrapidísimo</strong> 🛴💭[cite: 1].<br>
+            🤫 <em>Paquetes 100% sellados, sin marcas y muy discretos[cite: 1].</em>
             </p>
         </section>
 
-        <!-- NUEVO CARRUSEL EXCLUSIVO PARA LAS FOTOS DE LOS COMBOS (pwr, pwr1, pwr2) -->
+        <!-- CARRUSEL DE CLIENTES SATISFECHOS -->
         <section>
-            <h2>📸 Conoce Nuestros Combos en Detalle</h2>
-            <div class="carousel-container">
-                <button class="carousel-btn prev" id="btn-prev-combos">&#10094;</button>
-                <div class="carousel" id="combos-carousel">
-                    <div class="carousel-item"><div class="img-wrapper" style="aspect-ratio: 4/5;"><img src="pwr.jpeg" alt="Combo PowerSex"></div></div>
-                    <div class="carousel-item"><div class="img-wrapper" style="aspect-ratio: 4/5;"><img src="pwr1.jpeg" alt="Combo PowerSex 1"></div></div>
-                    <div class="carousel-item"><div class="img-wrapper" style="aspect-ratio: 4/5;"><img src="pwr2.jpeg" alt="Combo PowerSex 2"></div></div>
-                </div>
-                <button class="carousel-btn next" id="btn-next-combos">&#10095;</button>
-            </div>
-        </section>
-
-        <!-- CARRUSEL ORIGINAL DE CLIENTES SATISFECHOS -->
-        <section>
-            <h2>🤫 Discreción y Clientes Satisfechos</h2>
+            <h2>🤫 Discreción y Clientes Satisfechos[cite: 1]</h2>
             <div class="carousel-container">
                 <button class="carousel-btn prev" id="btn-prev-clients">&#10094;</button>
                 <div class="carousel" id="clients-carousel">
@@ -451,25 +529,12 @@
             </div>
         </section>
 
-        <!-- VIDEO FIJO DE ABAJO -->
-        <section class="feature-box">
-            <h2>Transparencia y Respaldo en Cada Despacho</h2>
-            <p>Contamos con un sistema organizado para garantizar que cada pedido llegue a su destino de forma segura y confiable.</p>
-            
-            <div class="video-gallery-container">
-                <video id="fixed-video" controls loop autoplay playsinline>
-                    <source src="WhatsApp Video 2026-09-02 at 3.54.02 PM.mp4" type="video/mp4">
-                    Tu navegador no soporta el video.
-                </video>
-            </div>
-        </section>
-
     </div>
 
     <footer style="text-align: center; padding: 40px 20px; background-color: #050505; border-top: 1px solid #333;">
         <div class="container" style="padding: 0;">
-            <h2>💌 Ordena tu Combo Powersex ahora mismo</h2>
-            <p style="color: #fff; font-size: 1.2rem; margin-top: 20px;">Línea Directa WhatsApp: <strong>📞 3128580134</strong></p>
+            <h2>💌 Ordena tu Combo Powersex ahora mismo[cite: 1]</h2>
+            <p style="color: #fff; font-size: 1.2rem; margin-top: 20px;">Línea Directa WhatsApp: <strong>📞 3128580134</strong>[cite: 1]</p>
             
             <a href="#combos" class="btn-whatsapp" style="font-size: 1.4rem; max-width: 450px;">
                 🔥 VER COMBOS Y PEDIR POR WHATSAPP
@@ -483,8 +548,13 @@
 
     <!-- Scripts de la Página -->
     <script>
+        function slideCard(button, direction) {
+            const container = button.parentElement.querySelector('.card-carousel');
+            const scrollAmount = container.clientWidth;
+            container.scrollBy({ left: scrollAmount * direction, behavior: 'smooth' });
+        }
+
         document.addEventListener('DOMContentLoaded', function() {
-            // Función auxiliar para configurar carruseles
             function setupCarousel(carouselId, prevBtnId, nextBtnId) {
                 const carousel = document.getElementById(carouselId);
                 const btnPrev = document.getElementById(prevBtnId);
@@ -506,17 +576,14 @@
                 });
             }
 
-            // Inicializar ambos carruseles de forma independiente
-            setupCarousel('combos-carousel', 'btn-prev-combos', 'btn-next-combos');
             setupCarousel('clients-carousel', 'btn-prev-clients', 'btn-next-clients');
 
-            // Configurar video inferior
-            const fixedVideo = document.getElementById('fixed-video');
-            if (fixedVideo) {
-                fixedVideo.volume = 1.0;
-                fixedVideo.play().catch(e => {
-                    fixedVideo.muted = true;
-                    fixedVideo.play();
+            const topVideo = document.getElementById('top-audio-video');
+            if (topVideo) {
+                topVideo.volume = 1.0;
+                topVideo.play().catch(e => {
+                    topVideo.muted = true;
+                    topVideo.play();
                 });
             }
         });
