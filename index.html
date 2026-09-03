@@ -39,17 +39,16 @@
             display: block;
             background-color: #25D366;
             color: #ffffff;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             font-weight: 700;
             text-decoration: none;
-            padding: 15px 30px;
+            padding: 12px 20px;
             border-radius: 50px;
             box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             text-align: center;
-            margin: 30px auto;
-            width: 90%;
-            max-width: 450px;
+            margin: 20px auto 0 auto;
+            width: 100%;
         }
 
         .btn-whatsapp:hover {
@@ -85,24 +84,21 @@
             box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
         }
 
-        /* Recorte inteligente de Capturas */
+        /* Recorte inteligente de imágenes */
         .img-wrapper {
             width: 100%;
-            aspect-ratio: 4 / 5;
+            aspect-ratio: 4 / 3;
             overflow: hidden;
-            border-radius: 10px;
-            border: 2px solid #333;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-            position: relative;
+            border-radius: 8px;
+            border: 1px solid #333;
             background-color: #000;
+            position: relative;
         }
 
         .img-wrapper img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transform: scale(1.25);
-            transition: transform 0.3s;
         }
 
         .image-grid {
@@ -132,10 +128,10 @@
             margin-bottom: 10px;
         }
 
-        /* Combos Grid (6 Combos) */
+        /* Combos Grid & Mini Carrusel por tarjeta */
         .combos-grid {
             display: flex;
-            gap: 20px;
+            gap: 25px;
             flex-wrap: wrap;
             justify-content: center;
             margin-top: 30px;
@@ -145,9 +141,9 @@
             background: linear-gradient(145deg, #1f1f1f, #121212);
             border: 2px solid #d4af37;
             border-radius: 15px;
-            padding: 25px 15px;
+            padding: 20px;
             width: 100%;
-            max-width: 320px;
+            max-width: 330px;
             text-align: center;
             box-shadow: 0 10px 20px rgba(0,0,0,0.6);
             position: relative;
@@ -155,7 +151,7 @@
         }
 
         .combo-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-5px);
             border-color: #ff3333;
         }
 
@@ -175,29 +171,76 @@
             border-radius: 20px;
             font-weight: bold;
             font-size: 0.85rem;
+            z-index: 5;
         }
+
+        /* Mini Carrusel dentro de cada Tarjeta */
+        .card-carousel-container {
+            position: relative;
+            width: 100%;
+            margin-bottom: 15px;
+        }
+
+        .card-carousel {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            scrollbar-width: none; /* Ocultar scroll en Firefox */
+        }
+
+        .card-carousel::-webkit-scrollbar {
+            display: none; /* Ocultar scroll en Chrome/Safari */
+        }
+
+        .card-carousel-item {
+            scroll-snap-align: start;
+            flex: 0 0 100%;
+            width: 100%;
+        }
+
+        .card-btn {
+            position: absolute;
+            top: 45%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #d4af37;
+            border: 1px solid #d4af37;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            transition: background 0.2s;
+        }
+
+        .card-btn:hover {
+            background-color: #d4af37;
+            color: #000;
+        }
+
+        .card-btn.prev { left: 5px; }
+        .card-btn.next { right: 5px; }
 
         .combo-price {
             font-size: 2.2rem;
             font-weight: 900;
             color: #d4af37;
-            margin: 15px 0;
+            margin: 10px 0;
         }
 
         .combo-card p {
             font-size: 0.95rem;
-            margin: 8px 0;
+            margin: 6px 0;
             color: #eaeaea;
+            text-align: left;
         }
 
-        .combo-card .btn-whatsapp {
-            font-size: 1rem;
-            padding: 10px 15px;
-            margin: 15px auto 0 auto;
-            width: 100%;
-        }
-
-        /* Proceso de Compra (Contra entrega / Interrapidísimo) */
+        /* Proceso de Compra */
         .payment-box {
             background-color: #0d1a0d;
             border: 2px solid #25D366;
@@ -212,7 +255,7 @@
             margin-top: 0;
         }
 
-        /* Carrusel de Galería (Fotos) */
+        /* Carrusel General de Clientes */
         .carousel-container {
             position: relative;
             max-width: 100%;
@@ -229,19 +272,9 @@
             padding-bottom: 10px;
         }
 
-        .carousel::-webkit-scrollbar {
-            height: 8px;
-        }
-
-        .carousel::-webkit-scrollbar-track {
-            background: #1a1a1a;
-            border-radius: 10px;
-        }
-
-        .carousel::-webkit-scrollbar-thumb {
-            background: #d4af37;
-            border-radius: 10px;
-        }
+        .carousel::-webkit-scrollbar { height: 8px; }
+        .carousel::-webkit-scrollbar-track { background: #1a1a1a; border-radius: 10px; }
+        .carousel::-webkit-scrollbar-thumb { background: #d4af37; border-radius: 10px; }
 
         .carousel-item {
             scroll-snap-align: center;
@@ -249,15 +282,11 @@
         }
 
         @media (min-width: 768px) {
-            .carousel-item {
-                flex: 0 0 calc(50% - 20px);
-            }
+            .carousel-item { flex: 0 0 calc(50% - 20px); }
         }
 
         @media (min-width: 1024px) {
-            .carousel-item {
-                flex: 0 0 calc(33.333% - 20px);
-            }
+            .carousel-item { flex: 0 0 calc(33.333% - 20px); }
         }
 
         .carousel-btn {
@@ -276,12 +305,6 @@
             align-items: center;
             justify-content: center;
             z-index: 10;
-            transition: all 0.3s;
-        }
-
-        .carousel-btn:hover {
-            background-color: #d4af37;
-            color: #000;
         }
 
         .carousel-btn.prev { left: 0; }
@@ -318,7 +341,7 @@
                 <source src="WhatsApp Video 2026-09-02 at 3.49.05 PM.mp4" type="video/mp4">
             </video>
 
-            <a href="#combos" class="btn-whatsapp">
+            <a href="#combos" class="btn-whatsapp" style="max-width: 450px;">
                 👉 ¡VER LOS 6 COMBOS Y PEDIR!
             </a>
         </div>
@@ -347,17 +370,25 @@
 
         <hr>
 
-        <!-- SECCIÓN DE 6 COMBOS -->
+        <!-- SECCIÓN DE 6 COMBOS CON MINI CARRUSEL EN CADA TARJETA -->
         <section id="combos">
             <h2>🔥 ¡Tenemos 6 increíbles Combos! 👀 🧐</h2>
-            <p>Elige tu combo favorito en pastillas o líquidos. ¡Absoluta reserva!</p>
+            <p>Elige tu combo favorito deslizando las fotos de cada tarjeta. ¡Absoluta reserva!</p>
             
             <div class="combos-grid">
                 
                 <!-- COMBO 1 -->
                 <div class="combo-card">
-                    <h3 style="font-size: 1.5rem; color: #fff; margin:0;">Combo 1</h3>
-                    <p style="color: #d4af37; font-weight: bold;">SOLO PASTILLAS 💊</p>
+                    <div class="card-carousel-container">
+                        <button class="card-btn prev" onclick="slideCard(this, -1)">&#10094;</button>
+                        <div class="card-carousel">
+                            <div class="card-carousel-item"><div class="img-wrapper"><img src="pwr.jpeg" alt="Combo 1 - Imagen 1"></div></div>
+                            <div class="card-carousel-item"><div class="img-wrapper"><img src="pwr1.jpeg" alt="Combo 1 - Imagen 2"></div></div>
+                        </div>
+                        <button class="card-btn next" onclick="slideCard(this, 1)">&#10095;</button>
+                    </div>
+                    <h3 style="font-size: 1.4rem; color: #fff; margin:5px 0;">Combo 1</h3>
+                    <p style="color: #d4af37; font-weight: bold; text-align: center;">SOLO PASTILLAS 💊</p>
                     <p>✓ 16 Pastillas Powersex</p>
                     <p>🎁 <strong>BONO:</strong> 30% Dto en Motel (Medellín)</p>
                     <div class="combo-price">$20.000</div>
@@ -367,8 +398,16 @@
                 <!-- COMBO 2 -->
                 <div class="combo-card popular">
                     <div class="badge">🔥 RECOMENDADO</div>
-                    <h3 style="font-size: 1.5rem; color: #fff; margin:0;">Combo 2</h3>
-                    <p style="color: #ff3333; font-weight: bold;">SOLO PASTILLAS 🚀</p>
+                    <div class="card-carousel-container">
+                        <button class="card-btn prev" onclick="slideCard(this, -1)">&#10094;</button>
+                        <div class="card-carousel">
+                            <div class="card-carousel-item"><div class="img-wrapper"><img src="pwr1.jpeg" alt="Combo 2 - Imagen 1"></div></div>
+                            <div class="card-carousel-item"><div class="img-wrapper"><img src="pwr2.jpeg" alt="Combo 2 - Imagen 2"></div></div>
+                        </div>
+                        <button class="card-btn next" onclick="slideCard(this, 1)">&#10095;</button>
+                    </div>
+                    <h3 style="font-size: 1.4rem; color: #fff; margin:5px 0;">Combo 2</h3>
+                    <p style="color: #ff3333; font-weight: bold; text-align: center;">SOLO PASTILLAS 🚀</p>
                     <p>✓ 24 Pastillas Powersex</p>
                     <p>🎁 <strong>BONO:</strong> 30% Dto en Motel (Medellín)</p>
                     <div class="combo-price">$30.000</div>
@@ -377,8 +416,16 @@
 
                 <!-- COMBO 3 -->
                 <div class="combo-card">
-                    <h3 style="font-size: 1.5rem; color: #fff; margin:0;">Combo 3</h3>
-                    <p style="color: #d4af37; font-weight: bold;">¡PA' LA FINCA! 💨</p>
+                    <div class="card-carousel-container">
+                        <button class="card-btn prev" onclick="slideCard(this, -1)">&#10094;</button>
+                        <div class="card-carousel">
+                            <div class="card-carousel-item"><div class="img-wrapper"><img src="pwr2.jpeg" alt="Combo 3 - Imagen 1"></div></div>
+                            <div class="card-carousel-item"><div class="img-wrapper"><img src="pwr.jpeg" alt="Combo 3 - Imagen 2"></div></div>
+                        </div>
+                        <button class="card-btn next" onclick="slideCard(this, 1)">&#10095;</button>
+                    </div>
+                    <h3 style="font-size: 1.4rem; color: #fff; margin:5px 0;">Combo 3</h3>
+                    <p style="color: #d4af37; font-weight: bold; text-align: center;">¡PA' LA FINCA! 💨</p>
                     <p>✓ 60 Pastillas Powersex</p>
                     <p>🎁 <strong>BONO:</strong> Bono de Motel Incluido</p>
                     <div class="combo-price">$60.000</div>
@@ -387,8 +434,16 @@
 
                 <!-- COMBO 4 (Líquidos) -->
                 <div class="combo-card">
-                    <h3 style="font-size: 1.5rem; color: #fff; margin:0;">Combo 4</h3>
-                    <p style="color: #d4af37; font-weight: bold;">LÍQUIDO POWERSEX ⚡</p>
+                    <div class="card-carousel-container">
+                        <button class="card-btn prev" onclick="slideCard(this, -1)">&#10094;</button>
+                        <div class="card-carousel">
+                            <div class="card-carousel-item"><div class="img-wrapper"><img src="combo4.jpeg" alt="Combo 4 - Imagen 1"></div></div>
+                            <div class="card-carousel-item"><div class="img-wrapper"><img src="pwr.jpeg" alt="Combo 4 - Imagen 2"></div></div>
+                        </div>
+                        <button class="card-btn next" onclick="slideCard(this, 1)">&#10095;</button>
+                    </div>
+                    <h3 style="font-size: 1.4rem; color: #fff; margin:5px 0;">Combo 4</h3>
+                    <p style="color: #d4af37; font-weight: bold; text-align: center;">LÍQUIDO POWERSEX ⚡</p>
                     <p>✓ 500ml (1 copa de 20ml, 40 min antes)</p>
                     <p>🎁 <strong>Obsequio:</strong> 4 Pastillas + Bono Motel</p>
                     <div class="combo-price">$45.000</div>
@@ -397,8 +452,16 @@
 
                 <!-- COMBO 5 (Líquidos) -->
                 <div class="combo-card">
-                    <h3 style="font-size: 1.5rem; color: #fff; margin:0;">Combo 5</h3>
-                    <p style="color: #d4af37; font-weight: bold;">VITAFER LÍQUIDO 🌿</p>
+                    <div class="card-carousel-container">
+                        <button class="card-btn prev" onclick="slideCard(this, -1)">&#10094;</button>
+                        <div class="card-carousel">
+                            <div class="card-carousel-item"><div class="img-wrapper"><img src="combobi5.jpeg" alt="Combo 5 - Imagen 1"></div></div>
+                            <div class="card-carousel-item"><div class="img-wrapper"><img src="pwr1.jpeg" alt="Combo 5 - Imagen 2"></div></div>
+                        </div>
+                        <button class="card-btn next" onclick="slideCard(this, 1)">&#10095;</button>
+                    </div>
+                    <h3 style="font-size: 1.4rem; color: #fff; margin:5px 0;">Combo 5</h3>
+                    <p style="color: #d4af37; font-weight: bold; text-align: center;">VITAFER LÍQUIDO 🌿</p>
                     <p>✓ 500ml (Energía y rendimiento total)</p>
                     <p>🎁 <strong>Obsequio:</strong> 4 Pastillas + Bono Motel</p>
                     <div class="combo-price">$50.000</div>
@@ -407,8 +470,16 @@
 
                 <!-- COMBO 6 (Líquidos) -->
                 <div class="combo-card">
-                    <h3 style="font-size: 1.5rem; color: #fff; margin:0;">Combo 6</h3>
-                    <p style="color: #d4af37; font-weight: bold;">MERO MACHO LÍQUIDO 💪</p>
+                    <div class="card-carousel-container">
+                        <button class="card-btn prev" onclick="slideCard(this, -1)">&#10094;</button>
+                        <div class="card-carousel">
+                            <div class="card-carousel-item"><div class="img-wrapper"><img src="combo6.jpeg" alt="Combo 6 - Imagen 1"></div></div>
+                            <div class="card-carousel-item"><div class="img-wrapper"><img src="pwr2.jpeg" alt="Combo 6 - Imagen 2"></div></div>
+                        </div>
+                        <button class="card-btn next" onclick="slideCard(this, 1)">&#10095;</button>
+                    </div>
+                    <h3 style="font-size: 1.4rem; color: #fff; margin:5px 0;">Combo 6</h3>
+                    <p style="color: #d4af37; font-weight: bold; text-align: center;">MERO MACHO LÍQUIDO 💪</p>
                     <p>✓ 500ml (Potencia pura tradicional)</p>
                     <p>🎁 <strong>Obsequio:</strong> 4 Pastillas + Bono Motel</p>
                     <div class="combo-price">$50.000</div>
@@ -435,24 +506,24 @@
                 <button class="carousel-btn prev" id="btn-prev">&#10094;</button>
                 
                 <div class="carousel" id="gallery-carousel">
-                    <div class="carousel-item"><div class="img-wrapper"><img src="WhatsApp Image 2026-09-02 at 3.49.02 PM (1).jpeg" alt="Cliente feliz"></div></div>
-                    <div class="carousel-item"><div class="img-wrapper"><img src="WhatsApp Image 2026-09-02 at 3.49.02 PM (2).jpeg" alt="Envío efectivo"></div></div>
-                    <div class="carousel-item"><div class="img-wrapper"><img src="WhatsApp Image 2026-09-02 at 3.49.02 PM (3).jpeg" alt="Producto Cali"></div></div>
-                    <div class="carousel-item"><div class="img-wrapper"><img src="WhatsApp Image 2026-09-02 at 3.49.02 PM (4).jpeg" alt="Cliente satisfecho"></div></div>
-                    <div class="carousel-item"><div class="img-wrapper"><img src="WhatsApp Image 2026-09-02 at 3.49.02 PM.jpeg" alt="Componentes Naturales"></div></div>
+                    <div class="carousel-item"><div class="img-wrapper" style="aspect-ratio: 4/5;"><img src="WhatsApp Image 2026-09-02 at 3.49.02 PM (1).jpeg" alt="Cliente feliz"></div></div>
+                    <div class="carousel-item"><div class="img-wrapper" style="aspect-ratio: 4/5;"><img src="WhatsApp Image 2026-09-02 at 3.49.02 PM (2).jpeg" alt="Envío efectivo"></div></div>
+                    <div class="carousel-item"><div class="img-wrapper" style="aspect-ratio: 4/5;"><img src="WhatsApp Image 2026-09-02 at 3.49.02 PM (3).jpeg" alt="Producto Cali"></div></div>
+                    <div class="carousel-item"><div class="img-wrapper" style="aspect-ratio: 4/5;"><img src="WhatsApp Image 2026-09-02 at 3.49.02 PM (4).jpeg" alt="Cliente satisfecho"></div></div>
+                    <div class="carousel-item"><div class="img-wrapper" style="aspect-ratio: 4/5;"><img src="WhatsApp Image 2026-09-02 at 3.49.02 PM.jpeg" alt="Componentes Naturales"></div></div>
                 </div>
 
                 <button class="carousel-btn next" id="btn-next">&#10095;</button>
             </div>
         </section>
 
-        <!-- VIDEO FIJO DE ABAJO (Con Controles de Pausa y Volumen) -->
+        <!-- VIDEO FIJO DE ABAJO (Con Bucle y Audio Alto) -->
         <section class="feature-box">
             <h2>Transparencia y Respaldo en Cada Despacho</h2>
             <p>Contamos con un sistema organizado para garantizar que cada pedido llegue a su destino de forma segura y confiable.</p>
             
             <div class="video-gallery-container">
-                <video controls autoplay muted playsinline>
+                <video id="fixed-video" controls loop autoplay playsinline>
                     <source src="WhatsApp Video 2026-09-02 at 3.54.02 PM.mp4" type="video/mp4">
                     Tu navegador no soporta el video.
                 </video>
@@ -466,19 +537,27 @@
             <h2>💌 Ordena tu Combo Powersex ahora mismo</h2>
             <p style="color: #fff; font-size: 1.2rem; margin-top: 20px;">Línea Directa WhatsApp: <strong>📞 3128580134</strong></p>
             
-            <a href="#combos" class="btn-whatsapp" style="font-size: 1.4rem;">
+            <a href="#combos" class="btn-whatsapp" style="font-size: 1.4rem; max-width: 450px;">
                 🔥 VER COMBOS Y PEDIR POR WHATSAPP
             </a>
             
-            <div class="img-wrapper" style="max-width: 400px; margin: 30px auto 0; aspect-ratio: 1/1;">
+            <div class="img-wrapper" style="max-width: 350px; margin: 30px auto 0; aspect-ratio: 1/1;">
                 <img src="WhatsApp Image 2026-09-02 at 3.49.01 PM (1).jpeg" alt="Caja con productos Power Sex">
             </div>
         </div>
     </footer>
 
-    <!-- Script del Carrusel -->
+    <!-- Scripts de la Página -->
     <script>
+        // Función para mover el mini carrusel de cada tarjeta de combo
+        function slideCard(button, direction) {
+            const container = button.parentElement.querySelector('.card-carousel');
+            const scrollAmount = container.clientWidth;
+            container.scrollBy({ left: scrollAmount * direction, behavior: 'smooth' });
+        }
+
         document.addEventListener('DOMContentLoaded', function() {
+            // Carrusel General de Clientes
             const carousel = document.getElementById('gallery-carousel');
             const btnPrev = document.getElementById('btn-prev');
             const btnNext = document.getElementById('btn-next');
@@ -495,6 +574,16 @@
             btnPrev.addEventListener('click', () => {
                 carousel.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
             });
+
+            // Configurar video inferior con volumen alto y bucle forzado
+            const fixedVideo = document.getElementById('fixed-video');
+            if (fixedVideo) {
+                fixedVideo.volume = 1.0;
+                fixedVideo.play().catch(e => {
+                    fixedVideo.muted = true;
+                    fixedVideo.play();
+                });
+            }
         });
     </script>
 </body>
