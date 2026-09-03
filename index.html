@@ -275,7 +275,7 @@
             text-align: left;
         }
 
-        /* SECCIÓN DE PAGOS Y GIROS ALTAMENTE RESALTADA */
+        /* Sección de Pagos y Giros */
         .payment-highlight-box {
             background: linear-gradient(135deg, #05260f 0%, #0d1a0d 100%);
             border: 3px solid #25D366;
@@ -433,7 +433,7 @@
 
         <hr>
 
-        <!-- SECCIÓN DE 6 COMBOS -->
+        <!-- SECCIÓN DE 6 COMBOS CON FOTOS Y MINI CARRUSELES -->
         <section id="combos">
             <h2>🔥 ¡Tenemos 6 increíbles Combos! 👀 🧐</h2>
             <p>Elige tu combo favorito en pastillas o líquidos. ¡Absoluta reserva!</p>
@@ -497,8 +497,15 @@
 
                 <!-- COMBO 4 (Líquidos) -->
                 <div class="combo-card">
-                    <div class="img-wrapper"><img src="combo4.jpeg" alt="Combo 4"></div>
-                    <h3 style="font-size: 1.4rem; color: #fff; margin:10px 0 0 0;">Combo 4</h3>
+                    <div class="card-carousel-container">
+                        <button class="card-btn prev" onclick="slideCard(this, -1)">&#10094;</button>
+                        <div class="card-carousel">
+                            <div class="card-carousel-item"><div class="img-wrapper"><img src="combo4.jpeg" alt="Combo 4"></div></div>
+                            <div class="card-carousel-item"><div class="img-wrapper"><img src="combobo4.jpeg" alt="Combo 4 Extra"></div></div>
+                        </div>
+                        <button class="card-btn next" onclick="slideCard(this, 1)">&#10095;</button>
+                    </div>
+                    <h3 style="font-size: 1.4rem; color: #fff; margin:5px 0;">Combo 4</h3>
                     <p style="color: #d4af37; font-weight: bold; text-align: center;">LÍQUIDO POWERSEX ⚡</p>
                     <p>✓ 500ml (1 copa de 20ml, 40 min antes)</p>
                     <p>🎁 <strong>Obsequio:</strong> 4 Pastillas + Bono Motel</p>
@@ -508,8 +515,14 @@
 
                 <!-- COMBO 5 (Líquidos) -->
                 <div class="combo-card">
-                    <div class="img-wrapper"><img src="combobi5.jpeg" alt="Combo 5"></div>
-                    <h3 style="font-size: 1.4rem; color: #fff; margin:10px 0 0 0;">Combo 5</h3>
+                    <div class="card-carousel-container">
+                        <button class="card-btn prev" onclick="slideCard(this, -1)">&#10094;</button>
+                        <div class="card-carousel">
+                            <div class="card-carousel-item"><div class="img-wrapper"><img src="combobi5.jpeg" alt="Combo 5"></div></div>
+                        </div>
+                        <button class="card-btn next" onclick="slideCard(this, 1)">&#10095;</button>
+                    </div>
+                    <h3 style="font-size: 1.4rem; color: #fff; margin:5px 0;">Combo 5</h3>
                     <p style="color: #d4af37; font-weight: bold; text-align: center;">VITAFER LÍQUIDO 🌿</p>
                     <p>✓ 500ml (Energía y rendimiento total)</p>
                     <p>🎁 <strong>Obsequio:</strong> 4 Pastillas + Bono Motel</p>
@@ -519,8 +532,14 @@
 
                 <!-- COMBO 6 (Líquidos) -->
                 <div class="combo-card">
-                    <div class="img-wrapper"><img src="combo6.jpeg" alt="Combo 6"></div>
-                    <h3 style="font-size: 1.4rem; color: #fff; margin:10px 0 0 0;">Combo 6</h3>
+                    <div class="card-carousel-container">
+                        <button class="card-btn prev" onclick="slideCard(this, -1)">&#10094;</button>
+                        <div class="card-carousel">
+                            <div class="card-carousel-item"><div class="img-wrapper"><img src="combo6.jpeg" alt="Combo 6"></div></div>
+                        </div>
+                        <button class="card-btn next" onclick="slideCard(this, 1)">&#10095;</button>
+                    </div>
+                    <h3 style="font-size: 1.4rem; color: #fff; margin:5px 0;">Combo 6</h3>
                     <p style="color: #d4af37; font-weight: bold; text-align: center;">MERO MACHO LÍQUIDO 💪</p>
                     <p>✓ 500ml (Potencia pura tradicional)</p>
                     <p>🎁 <strong>Obsequio:</strong> 4 Pastillas + Bono Motel</p>
@@ -531,7 +550,7 @@
             </div>
         </section>
 
-        <!-- SECCIÓN DE PROCESO DE COMPRA, GIROS Y COMPROBANTE (ALTAMENTE RESALTADA) -->
+        <!-- SECCIÓN DE PROCESO DE COMPRA Y GIROS RESALTADA -->
         <section class="payment-highlight-box">
             <h3>💳 ¿Cómo Hacer Tu Pago y Comprar?</h3>
             <p>Sigue estos sencillos pasos para procesar tu pedido de forma rápida y segura:</p>
