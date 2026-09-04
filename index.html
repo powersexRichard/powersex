@@ -9,7 +9,7 @@
         
         body {
             font-family: 'Montserrat', sans-serif;
-            background-color: #0d0d0d;
+            background-color: #0b1329; /* Fondo azul representativo de la marca */
             color: #ffffff;
             margin: 0;
             padding: 0;
@@ -18,7 +18,7 @@
 
         /* Aviso Superior de Confianza (Top Bar) */
         .top-announcement-bar {
-            background: linear-gradient(90deg, #b30000, #ff3333, #d4af37, #ff3333, #b30000);
+            background: linear-gradient(90deg, #004080, #0066cc, #d4af37, #0066cc, #004080);
             background-size: 200% auto;
             color: #ffffff;
             text-align: center;
@@ -74,11 +74,12 @@
             color: #fff;
         }
 
-        /* Hero Section & Media */
+        /* Hero Section con Fondo Azul y la Imagen Solicitada */
         .hero {
             text-align: center;
-            padding: 40px 20px;
-            background: linear-gradient(135deg, #1a0000 0%, #000000 100%);
+            padding: 50px 20px;
+            background: linear-gradient(135deg, rgba(0, 31, 77, 0.95) 0%, rgba(5, 11, 26, 0.95) 100%), url('requerimiento pagina powersex _files/1.jpg') no-repeat center center;
+            background-size: cover;
             border-bottom: 3px solid #d4af37;
         }
 
@@ -118,6 +119,46 @@
             height: 100%;
             object-fit: cover;
             display: block;
+        }
+
+        /* Sección Informativa: Uso y Efectos */
+        .info-effects-box {
+            background-color: #111a36;
+            border: 2px solid #0066cc;
+            padding: 30px;
+            border-radius: 12px;
+            margin: 40px 0;
+            box-shadow: 0 5px 15px rgba(0, 102, 204, 0.2);
+        }
+
+        .effects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .effect-card {
+            background: rgba(0, 0, 0, 0.4);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #d4af37;
+        }
+
+        .effect-card h4 {
+            color: #d4af37;
+            margin-top: 0;
+            font-size: 1.2rem;
+        }
+
+        .effect-card ul {
+            padding-left: 20px;
+            color: #ddd;
+            text-align: left;
+        }
+
+        .effect-card li {
+            margin-bottom: 8px;
         }
 
         /* Imágenes y Mini Carruseles de Tarjetas */
@@ -196,11 +237,11 @@
         }
 
         .feature-box {
-            background-color: #1a1a1a;
+            background-color: #111a36;
             padding: 30px;
             border-radius: 10px;
             margin: 40px 0;
-            border: 1px solid #d4af37;
+            border: 1px solid #0066cc;
             text-align: center;
         }
         
@@ -225,8 +266,8 @@
         }
 
         .combo-card {
-            background: linear-gradient(145deg, #1f1f1f, #121212);
-            border: 2px solid #d4af37;
+            background: linear-gradient(145deg, #142145, #0a1128);
+            border: 2px solid #0066cc;
             border-radius: 15px;
             padding: 20px;
             width: 100%;
@@ -239,7 +280,7 @@
 
         .combo-card:hover {
             transform: translateY(-5px);
-            border-color: #ff3333;
+            border-color: #d4af37;
         }
 
         .combo-card.popular {
@@ -376,7 +417,7 @@
         .carousel-btn.prev { left: 0; }
         .carousel-btn.next { right: 0; }
 
-        hr { border: 1px solid #333; margin: 40px 0; }
+        hr { border: 1px solid #0066cc; margin: 40px 0; }
     </style>
 </head>
 <body>
@@ -422,6 +463,39 @@
             </ul>
         </section>
 
+        <!-- SECCIÓN MODO DE USO Y EFECTOS (SOLICITUD NUEVA) -->
+        <section class="info-effects-box">
+            <h2>💊 Modo de Uso y Efectos Garantizados</h2>
+            <p style="color: #fff; font-size: 1.1rem; margin-bottom: 25px;">
+                <strong>Modo de uso:</strong> Tomar <span style="color: #d4af37;">1 píldora 40 minutos antes</span> de la relación[cite: 2]. Efecto aproximado de 3 a 4 horas según el fabricante[cite: 2].
+            </p>
+            
+            <div class="effects-grid">
+                <div class="effect-card">
+                    <h4>👨 Para Hombres</h4>
+                    <ul>
+                        <li>Retarda la eyaculación[cite: 2].</li>
+                        <li>Mayor deseo y apetito sexual[cite: 2].</li>
+                        <li>Erecciones más firmes[cite: 2].</li>
+                        <li>Mayor resistencia durante la relación[cite: 2].</li>
+                        <li>Sensación de mayor energía y vitalidad[cite: 2].</li>
+                        <li>Orgasmos más intensos[cite: 2].</li>
+                    </ul>
+                </div>
+                
+                <div class="effect-card">
+                    <h4>👩 Para Mujeres</h4>
+                    <ul>
+                        <li>Eleva la lívido[cite: 2].</li>
+                        <li>Aumento notable del deseo[cite: 2].</li>
+                        <li>Mayor sensación de excitación y placer[cite: 2].</li>
+                        <li>Sensación de calor corporal[cite: 2].</li>
+                        <li>Posible aumento de energía durante la actividad[cite: 2].</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
         <section>
             <h2>Tips para antes del delicioso</h2>
             <div class="image-grid">
@@ -433,7 +507,7 @@
 
         <hr>
 
-        <!-- SECCIÓN DE 6 COMBOS CON FOTOS Y MINI CARRUSELES -->
+        <!-- SECCIÓN DE 6 COMBOS CON FOTOS ACTUALIZADAS Y PRECIOS NUEVOS -->
         <section id="combos">
             <h2>🔥 ¡Tenemos 6 increíbles Combos! 👀 🧐</h2>
             <p>Elige tu combo favorito en pastillas o líquidos. ¡Absoluta reserva!</p>
@@ -495,7 +569,7 @@
                     <a href="https://wa.me/573128580134?text=Hola,%20quiero%20pedir%20el%20*COMBO%203%20($60.000)*.%0AMis%20datos:%0A-Nombre:%0A-Dirección:%0A-Barrio:%0A-WhatsApp:" class="btn-whatsapp" target="_blank">🛵 Pedir Combo 3</a>
                 </div>
 
-                <!-- COMBO 4 (Líquidos) -->
+                <!-- COMBO 4 (Líquidos - Precio Actualizado) -->
                 <div class="combo-card">
                     <div class="card-carousel-container">
                         <button class="card-btn prev" onclick="slideCard(this, -1)">&#10094;</button>
@@ -509,11 +583,11 @@
                     <p style="color: #d4af37; font-weight: bold; text-align: center;">LÍQUIDO POWERSEX ⚡</p>
                     <p>✓ 500ml (1 copa de 20ml, 40 min antes)</p>
                     <p>🎁 <strong>Obsequio:</strong> 4 Pastillas + Bono Motel</p>
-                    <div class="combo-price">$45.000</div>
-                    <a href="https://wa.me/573128580134?text=Hola,%20quiero%20pedir%20el%20*COMBO%204%20(PowerSex Líquido $45.000)*.%0AMis%20datos:%0A-Nombre:%0A-Dirección:%0A-Barrio:%0A-WhatsApp:" class="btn-whatsapp" target="_blank">🛵 Pedir Combo 4</a>
+                    <div class="combo-price">$35.000</div>
+                    <a href="https://wa.me/573128580134?text=Hola,%20quiero%20pedir%20el%20*COMBO%204%20(PowerSex Líquido $35.000)*.%0AMis%20datos:%0A-Nombre:%0A-Dirección:%0A-Barrio:%0A-WhatsApp:" class="btn-whatsapp" target="_blank">🛵 Pedir Combo 4</a>
                 </div>
 
-                <!-- COMBO 5 (Líquidos) -->
+                <!-- COMBO 5 (Líquidos - Precio Actualizado y Foto Optimizada) -->
                 <div class="combo-card">
                     <div class="card-carousel-container">
                         <button class="card-btn prev" onclick="slideCard(this, -1)">&#10094;</button>
@@ -526,11 +600,11 @@
                     <p style="color: #d4af37; font-weight: bold; text-align: center;">VITAFER LÍQUIDO 🌿</p>
                     <p>✓ 500ml (Energía y rendimiento total)</p>
                     <p>🎁 <strong>Obsequio:</strong> 4 Pastillas + Bono Motel</p>
-                    <div class="combo-price">$50.000</div>
-                    <a href="https://wa.me/573128580134?text=Hola,%20quiero%20pedir%20el%20*COMBO%205%20(Vitafer $50.000)*.%0AMis%20datos:%0A-Nombre:%0A-Dirección:%0A-Barrio:%0A-WhatsApp:" class="btn-whatsapp" target="_blank">🛵 Pedir Combo 5</a>
+                    <div class="combo-price">$38.000</div>
+                    <a href="https://wa.me/573128580134?text=Hola,%20quiero%20pedir%20el%20*COMBO%205%20(Vitafer $38.000)*.%0AMis%20datos:%0A-Nombre:%0A-Dirección:%0A-Barrio:%0A-WhatsApp:" class="btn-whatsapp" target="_blank">🛵 Pedir Combo 5</a>
                 </div>
 
-                <!-- COMBO 6 (Líquidos) -->
+                <!-- COMBO 6 (Líquidos - Precio Actualizado) -->
                 <div class="combo-card">
                     <div class="card-carousel-container">
                         <button class="card-btn prev" onclick="slideCard(this, -1)">&#10094;</button>
@@ -541,10 +615,10 @@
                     </div>
                     <h3 style="font-size: 1.4rem; color: #fff; margin:5px 0;">Combo 6</h3>
                     <p style="color: #d4af37; font-weight: bold; text-align: center;">MERO MACHO LÍQUIDO 💪</p>
-                    <p>✓ 500ml (Potencia pura tradicional)</p>
+                    <p>✓ 500ml (100% Original - Potencia pura)</p>
                     <p>🎁 <strong>Obsequio:</strong> 4 Pastillas + Bono Motel</p>
-                    <div class="combo-price">$50.000</div>
-                    <a href="https://wa.me/573128580134?text=Hola,%20quiero%20pedir%20el%20*COMBO%206%20(Mero Macho $50.000)*.%0AMis%20datos:%0A-Nombre:%0A-Dirección:%0A-Barrio:%0A-WhatsApp:" class="btn-whatsapp" target="_blank">🛵 Pedir Combo 6</a>
+                    <div class="combo-price">$43.000</div>
+                    <a href="https://wa.me/573128580134?text=Hola,%20quiero%20pedir%20el%20*COMBO%206%20(Mero Macho $43.000)*.%0AMis%20datos:%0A-Nombre:%0A-Dirección:%0A-Barrio:%0A-WhatsApp:" class="btn-whatsapp" target="_blank">🛵 Pedir Combo 6</a>
                 </div>
 
             </div>
@@ -597,7 +671,7 @@
 
     </div>
 
-    <footer style="text-align: center; padding: 40px 20px; background-color: #050505; border-top: 1px solid #333;">
+    <footer style="text-align: center; padding: 40px 20px; background-color: #050b1a; border-top: 1px solid #0066cc;">
         <div class="container" style="padding: 0;">
             <h2>💌 Ordena tu Combo Powersex ahora mismo</h2>
             <p style="color: #fff; font-size: 1.2rem; margin-top: 20px;">Línea Directa WhatsApp: <strong>📞 3128580134</strong></p>
