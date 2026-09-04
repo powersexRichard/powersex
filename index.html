@@ -93,8 +93,7 @@
         .hero {
             text-align: center;
             padding: 50px 20px;
-            background: linear-gradient(135deg, rgba(0, 31, 77, 0.95) 0%, rgba(5, 11, 26, 0.95) 100%), url('requerimiento pagina powersex _files/1.jpg') no-repeat center center;
-            background-size: cover;
+            background: linear-gradient(135deg, rgba(0, 31, 77, 0.95) 0%, rgba(5, 11, 26, 0.95) 100%);
             border-bottom: 3px solid #d4af37;
         }
 
@@ -176,73 +175,26 @@
             margin-bottom: 8px;
         }
 
-        /* Imágenes y Mini Carruseles de Tarjetas */
-        .img-wrapper {
+        /* Contenedor Fijo para Imágenes Completas sin Recorte */
+        .img-wrapper-fixed {
             width: 100%;
             aspect-ratio: 4 / 3;
             overflow: hidden;
             border-radius: 8px;
             border: 1px solid #333;
-            background-color: #000;
+            background-color: #050b1a;
             position: relative;
-        }
-
-        .img-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .card-carousel-container {
-            position: relative;
-            width: 100%;
             margin-bottom: 15px;
-        }
-
-        .card-carousel {
-            display: flex;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            scroll-behavior: smooth;
-            scrollbar-width: none;
-        }
-
-        .card-carousel::-webkit-scrollbar {
-            display: none;
-        }
-
-        .card-carousel-item {
-            scroll-snap-align: start;
-            flex: 0 0 100%;
-            width: 100%;
-        }
-
-        .card-btn {
-            position: absolute;
-            top: 45%;
-            transform: translateY(-50%);
-            background-color: rgba(0, 0, 0, 0.7);
-            color: #d4af37;
-            border: 1px solid #d4af37;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            font-size: 1.1rem;
-            cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            z-index: 10;
-            transition: background 0.2s;
         }
 
-        .card-btn:hover {
-            background-color: #d4af37;
-            color: #000;
+        .img-wrapper-fixed img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain; /* Muestra la imagen completa sin recortarla */
         }
-
-        .card-btn.prev { left: 5px; }
-        .card-btn.next { right: 5px; }
 
         .image-grid {
             display: grid;
@@ -517,15 +469,15 @@
         <section>
             <h2>Tips para antes del delicioso</h2>
             <div class="image-grid">
-                <div class="img-wrapper" style="aspect-ratio: 4/5;"><img src="WhatsApp Image 2026-09-02 at 3.49.03 PM (3).jpeg" alt="Tips"></div>
-                <div class="img-wrapper" style="aspect-ratio: 4/5;"><img src="WhatsApp Image 2026-09-02 at 3.49.03 PM (1).jpeg" alt="Aséate"></div>
-                <div class="img-wrapper" style="aspect-ratio: 4/5;"><img src="WhatsApp Image 2026-09-02 at 3.49.03 PM (2).jpeg" alt="Toma un PowerSex 30 minutos antes"></div>
+                <div class="img-wrapper-fixed" style="aspect-ratio: 4/5;"><img src="WhatsApp Image 2026-09-02 at 3.49.03 PM (3).jpeg" alt="Tips"></div>
+                <div class="img-wrapper-fixed" style="aspect-ratio: 4/5;"><img src="WhatsApp Image 2026-09-02 at 3.49.03 PM (1).jpeg" alt="Aséate"></div>
+                <div class="img-wrapper-fixed" style="aspect-ratio: 4/5;"><img src="WhatsApp Image 2026-09-02 at 3.49.03 PM (2).jpeg" alt="Toma un PowerSex 30 minutos antes"></div>
             </div>
         </section>
 
         <hr>
 
-        <!-- SECCIÓN DE 6 COMBOS -->
+        <!-- SECCIÓN DE 6 COMBOS CON IMAGEN FIJA COMPLETA (SIN CARRUSEL) -->
         <section id="combos">
             <h2>🔥 ¡Tenemos 6 increíbles Combos! 👀 🧐</h2>
             <p>Elige tu combo favorito en pastillas o líquidos. ¡Absoluta reserva!</p>
@@ -534,108 +486,80 @@
                 
                 <!-- COMBO 1 -->
                 <div class="combo-card">
-                    <div class="card-carousel-container">
-                        <button class="card-btn prev" onclick="slideCard(this, -1)">&#10094;</button>
-                        <div class="card-carousel">
-                            <div class="card-carousel-item"><div class="img-wrapper"><img src="combo1.jpeg" alt="Combo 1"></div></div>
-                            <div class="card-carousel-item"><div class="img-wrapper"><img src="pwr.jpeg" alt="Powersex Extra 1"></div></div>
-                        </div>
-                        <button class="card-btn next" onclick="slideCard(this, 1)">&#10095;</button>
+                    <div class="img-wrapper-fixed">
+                        <img src="combo1.jpeg" alt="Combo 1">
                     </div>
                     <h3 style="font-size: 1.4rem; color: #fff; margin:5px 0;">Combo 1</h3>
                     <p style="color: #d4af37; font-weight: bold; text-align: center;">SOLO PASTILLAS 💊</p>
-                    <p>✓ 16 Pastillas Powersex</p>
-                    <p>🎁 <strong>BONO:</strong> 30% Dto en Motel (Medellín)</p>
-                    <div class="combo-price">$20.000</div>
+                    <p>✓ 16 Pastillas Powersex[cite: 1]</p>
+                    <p>🎁 <strong>BONO:</strong> 30% Dto en Motel (Medellín)[cite: 1]</p>
+                    <div class="combo-price">$20.000[cite: 1]</div>
                     <a href="https://wa.me/573128580134?text=Hola,%20quiero%20pedir%20el%20*COMBO%201%20($20.000)*.%0AMis%20datos:%0A-Nombre:%0A-Dirección:%0A-Barrio:%0A-WhatsApp:" class="btn-whatsapp" target="_blank">🛵 Pedir Combo 1</a>
                 </div>
 
                 <!-- COMBO 2 -->
                 <div class="combo-card popular">
                     <div class="badge">🔥 RECOMENDADO</div>
-                    <div class="card-carousel-container">
-                        <button class="card-btn prev" onclick="slideCard(this, -1)">&#10094;</button>
-                        <div class="card-carousel">
-                            <div class="card-carousel-item"><div class="img-wrapper"><img src="combo2.jpeg" alt="Combo 2"></div></div>
-                            <div class="card-carousel-item"><div class="img-wrapper"><img src="pwr1.jpeg" alt="Powersex Extra 2"></div></div>
-                        </div>
-                        <button class="card-btn next" onclick="slideCard(this, 1)">&#10095;</button>
+                    <div class="img-wrapper-fixed">
+                        <img src="combo2.jpeg" alt="Combo 2">
                     </div>
                     <h3 style="font-size: 1.4rem; color: #fff; margin:5px 0;">Combo 2</h3>
                     <p style="color: #ff3333; font-weight: bold; text-align: center;">SOLO PASTILLAS 🚀</p>
-                    <p>✓ 24 Pastillas Powersex</p>
-                    <p>🎁 <strong>BONO:</strong> 30% Dto en Motel (Medellín)</p>
-                    <div class="combo-price">$30.000</div>
+                    <p>✓ 24 Pastillas Powersex[cite: 1]</p>
+                    <p>🎁 <strong>BONO:</strong> 30% Dto en Motel (Medellín)[cite: 1]</p>
+                    <div class="combo-price">$30.000[cite: 1]</div>
                     <a href="https://wa.me/573128580134?text=Hola,%20quiero%20pedir%20el%20*COMBO%202%20($30.000)*.%0AMis%20datos:%0A-Nombre:%0A-Dirección:%0A-Barrio:%0A-WhatsApp:" class="btn-whatsapp" target="_blank" style="background-color: #ff3333;">🛵 Pedir Combo 2</a>
                 </div>
 
                 <!-- COMBO 3 -->
                 <div class="combo-card">
-                    <div class="card-carousel-container">
-                        <button class="card-btn prev" onclick="slideCard(this, -1)">&#10094;</button>
-                        <div class="card-carousel">
-                            <div class="card-carousel-item"><div class="img-wrapper"><img src="combo3.jpeg" alt="Combo 3"></div></div>
-                            <div class="card-carousel-item"><div class="img-wrapper"><img src="pwr2.jpeg" alt="Powersex Extra 3"></div></div>
-                        </div>
-                        <button class="card-btn next" onclick="slideCard(this, 1)">&#10095;</button>
+                    <div class="img-wrapper-fixed">
+                        <img src="combo3.jpeg" alt="Combo 3">
                     </div>
                     <h3 style="font-size: 1.4rem; color: #fff; margin:5px 0;">Combo 3</h3>
                     <p style="color: #d4af37; font-weight: bold; text-align: center;">¡PA' LA FINCA! 💨</p>
-                    <p>✓ 60 Pastillas Powersex</p>
-                    <p>🎁 <strong>BONO:</strong> Bono de Motel Incluido</p>
-                    <div class="combo-price">$60.000</div>
+                    <p>✓ 60 Pastillas Powersex[cite: 1]</p>
+                    <p>🎁 <strong>BONO:</strong> Bono de Motel Incluido[cite: 1]</p>
+                    <div class="combo-price">$60.000[cite: 1]</div>
                     <a href="https://wa.me/573128580134?text=Hola,%20quiero%20pedir%20el%20*COMBO%203%20($60.000)*.%0AMis%20datos:%0A-Nombre:%0A-Dirección:%0A-Barrio:%0A-WhatsApp:" class="btn-whatsapp" target="_blank">🛵 Pedir Combo 3</a>
                 </div>
 
                 <!-- COMBO 4 (Líquidos) -->
                 <div class="combo-card">
-                    <div class="card-carousel-container">
-                        <button class="card-btn prev" onclick="slideCard(this, -1)">&#10094;</button>
-                        <div class="card-carousel">
-                            <div class="card-carousel-item"><div class="img-wrapper"><img src="combo4.jpeg" alt="Combo 4"></div></div>
-                            <div class="card-carousel-item"><div class="img-wrapper"><img src="combobo4.jpeg" alt="Combo 4 Extra"></div></div>
-                        </div>
-                        <button class="card-btn next" onclick="slideCard(this, 1)">&#10095;</button>
+                    <div class="img-wrapper-fixed">
+                        <img src="combo4.jpeg" alt="Combo 4">
                     </div>
                     <h3 style="font-size: 1.4rem; color: #fff; margin:5px 0;">Combo 4</h3>
                     <p style="color: #d4af37; font-weight: bold; text-align: center;">LÍQUIDO POWERSEX ⚡</p>
-                    <p>✓ 500ml (1 copa de 20ml, 40 min antes)</p>
-                    <p>🎁 <strong>Obsequio:</strong> 4 Pastillas + Bono Motel</p>
-                    <div class="combo-price">$35.000</div>
+                    <p>✓ 500ml (1 copa de 20ml, 40 min antes)[cite: 1]</p>
+                    <p>🎁 <strong>Obsequio:</strong> 4 Pastillas + Bono Motel[cite: 1]</p>
+                    <div class="combo-price">$35.000[cite: 2]</div>
                     <a href="https://wa.me/573128580134?text=Hola,%20quiero%20pedir%20el%20*COMBO%204%20(PowerSex Líquido $35.000)*.%0AMis%20datos:%0A-Nombre:%0A-Dirección:%0A-Barrio:%0A-WhatsApp:" class="btn-whatsapp" target="_blank">🛵 Pedir Combo 4</a>
                 </div>
 
                 <!-- COMBO 5 (Líquidos) -->
                 <div class="combo-card">
-                    <div class="card-carousel-container">
-                        <button class="card-btn prev" onclick="slideCard(this, -1)">&#10094;</button>
-                        <div class="card-carousel">
-                            <div class="card-carousel-item"><div class="img-wrapper"><img src="combobi5.jpeg" alt="Combo 5"></div></div>
-                        </div>
-                        <button class="card-btn next" onclick="slideCard(this, 1)">&#10095;</button>
+                    <div class="img-wrapper-fixed">
+                        <img src="combobi5.jpeg" alt="Combo 5">
                     </div>
                     <h3 style="font-size: 1.4rem; color: #fff; margin:5px 0;">Combo 5</h3>
                     <p style="color: #d4af37; font-weight: bold; text-align: center;">VITAFER LÍQUIDO 🌿</p>
-                    <p>✓ 500ml (Energía y rendimiento total)</p>
-                    <p>🎁 <strong>Obsequio:</strong> 4 Pastillas + Bono Motel</p>
-                    <div class="combo-price">$38.000</div>
+                    <p>✓ 500ml (Energía y rendimiento total)[cite: 1]</p>
+                    <p>🎁 <strong>Obsequio:</strong> 4 Pastillas + Bono Motel[cite: 1]</p>
+                    <div class="combo-price">$38.000[cite: 2]</div>
                     <a href="https://wa.me/573128580134?text=Hola,%20quiero%20pedir%20el%20*COMBO%205%20(Vitafer $38.000)*.%0AMis%20datos:%0A-Nombre:%0A-Dirección:%0A-Barrio:%0A-WhatsApp:" class="btn-whatsapp" target="_blank">🛵 Pedir Combo 5</a>
                 </div>
 
                 <!-- COMBO 6 (Líquidos) -->
                 <div class="combo-card">
-                    <div class="card-carousel-container">
-                        <button class="card-btn prev" onclick="slideCard(this, -1)">&#10094;</button>
-                        <div class="card-carousel">
-                            <div class="card-carousel-item"><div class="img-wrapper"><img src="combo6.jpeg" alt="Combo 6"></div></div>
-                        </div>
-                        <button class="card-btn next" onclick="slideCard(this, 1)">&#10095;</button>
+                    <div class="img-wrapper-fixed">
+                        <img src="combo6.jpeg" alt="Combo 6">
                     </div>
                     <h3 style="font-size: 1.4rem; color: #fff; margin:5px 0;">Combo 6</h3>
                     <p style="color: #d4af37; font-weight: bold; text-align: center;">MERO MACHO LÍQUIDO 💪</p>
-                    <p>✓ 500ml (100% Original - Potencia pura)</p>
-                    <p>🎁 <strong>Obsequio:</strong> 4 Pastillas + Bono Motel</p>
-                    <div class="combo-price">$43.000</div>
+                    <p>✓ 500ml (100% Original - Potencia pura)[cite: 1]</p>
+                    <p>🎁 <strong>Obsequio:</strong> 4 Pastillas + Bono Motel[cite: 1]</p>
+                    <div class="combo-price">$43.000[cite: 2]</div>
                     <a href="https://wa.me/573128580134?text=Hola,%20quiero%20pedir%20el%20*COMBO%206%20(Mero Macho $43.000)*.%0AMis%20datos:%0A-Nombre:%0A-Dirección:%0A-Barrio:%0A-WhatsApp:" class="btn-whatsapp" target="_blank">🛵 Pedir Combo 6</a>
                 </div>
 
@@ -677,11 +601,11 @@
             <div class="carousel-container">
                 <button class="carousel-btn prev" id="btn-prev-clients">&#10094;</button>
                 <div class="carousel" id="clients-carousel">
-                    <div class="carousel-item"><div class="img-wrapper" style="aspect-ratio: 4/5;"><img src="WhatsApp Image 2026-09-02 at 3.49.02 PM (1).jpeg" alt="Cliente feliz"></div></div>
-                    <div class="carousel-item"><div class="img-wrapper" style="aspect-ratio: 4/5;"><img src="WhatsApp Image 2026-09-02 at 3.49.02 PM (2).jpeg" alt="Envío efectivo"></div></div>
-                    <div class="carousel-item"><div class="img-wrapper" style="aspect-ratio: 4/5;"><img src="WhatsApp Image 2026-09-02 at 3.49.02 PM (3).jpeg" alt="Producto Cali"></div></div>
-                    <div class="carousel-item"><div class="img-wrapper" style="aspect-ratio: 4/5;"><img src="WhatsApp Image 2026-09-02 at 3.49.02 PM (4).jpeg" alt="Cliente satisfecho"></div></div>
-                    <div class="carousel-item"><div class="img-wrapper" style="aspect-ratio: 4/5;"><img src="WhatsApp Image 2026-09-02 at 3.49.02 PM.jpeg" alt="Componentes Naturales"></div></div>
+                    <div class="carousel-item"><div class="img-wrapper-fixed" style="aspect-ratio: 4/5;"><img src="WhatsApp Image 2026-09-02 at 3.49.02 PM (1).jpeg" alt="Cliente feliz"></div></div>
+                    <div class="carousel-item"><div class="img-wrapper-fixed" style="aspect-ratio: 4/5;"><img src="WhatsApp Image 2026-09-02 at 3.49.02 PM (2).jpeg" alt="Envío efectivo"></div></div>
+                    <div class="carousel-item"><div class="img-wrapper-fixed" style="aspect-ratio: 4/5;"><img src="WhatsApp Image 2026-09-02 at 3.49.02 PM (3).jpeg" alt="Producto Cali"></div></div>
+                    <div class="carousel-item"><div class="img-wrapper-fixed" style="aspect-ratio: 4/5;"><img src="WhatsApp Image 2026-09-02 at 3.49.02 PM (4).jpeg" alt="Cliente satisfecho"></div></div>
+                    <div class="carousel-item"><div class="img-wrapper-fixed" style="aspect-ratio: 4/5;"><img src="WhatsApp Image 2026-09-02 at 3.49.02 PM.jpeg" alt="Componentes Naturales"></div></div>
                 </div>
                 <button class="carousel-btn next" id="btn-next-clients">&#10095;</button>
             </div>
@@ -698,7 +622,7 @@
                 🔥 VER COMBOS Y PEDIR POR WHATSAPP
             </a>
             
-            <div class="img-wrapper" style="max-width: 350px; margin: 30px auto 0; aspect-ratio: 1/1;">
+            <div class="img-wrapper-fixed" style="max-width: 350px; margin: 30px auto 0; aspect-ratio: 1/1;">
                 <img src="WhatsApp Image 2026-09-02 at 3.49.01 PM (1).jpeg" alt="Caja con productos Power Sex">
             </div>
         </div>
@@ -706,12 +630,6 @@
 
     <!-- Scripts de la Página -->
     <script>
-        function slideCard(button, direction) {
-            const container = button.parentElement.querySelector('.card-carousel');
-            const scrollAmount = container.clientWidth;
-            container.scrollBy({ left: scrollAmount * direction, behavior: 'smooth' });
-        }
-
         document.addEventListener('DOMContentLoaded', function() {
             function setupCarousel(carouselId, prevBtnId, nextBtnId) {
                 const carousel = document.getElementById(carouselId);
