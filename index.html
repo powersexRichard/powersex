@@ -9,7 +9,7 @@
         
         body {
             font-family: 'Montserrat', sans-serif;
-            background-color: #0b1329; /* Fondo azul representativo de la marca */
+            background-color: #0b1329;
             color: #ffffff;
             margin: 0;
             padding: 0;
@@ -31,6 +31,21 @@
             top: 0;
             z-index: 1000;
             text-transform: uppercase;
+        }
+
+        /* Aviso Específico de Pago Contra Entrega en Medellín */
+        .cod-top-alert {
+            background-color: #132247;
+            color: #ffcc00;
+            text-align: center;
+            padding: 12px 15px;
+            font-weight: bold;
+            font-size: 1.05rem;
+            border-bottom: 2px solid #d4af37;
+            position: sticky;
+            top: 41px;
+            z-index: 999;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
         }
 
         h1, h2, h3 {
@@ -74,7 +89,7 @@
             color: #fff;
         }
 
-        /* Hero Section con Fondo Azul y la Imagen Solicitada */
+        /* Hero Section */
         .hero {
             text-align: center;
             padding: 50px 20px;
@@ -121,7 +136,7 @@
             display: block;
         }
 
-        /* Sección Informativa: Uso y Efectos */
+        /* Sección Modo de Uso y Efectos */
         .info-effects-box {
             background-color: #111a36;
             border: 2px solid #0066cc;
@@ -316,7 +331,7 @@
             text-align: left;
         }
 
-        /* Sección de Pagos y Giros */
+        /* Sección de Pagos y Giros Resaltada */
         .payment-highlight-box {
             background: linear-gradient(135deg, #05260f 0%, #0d1a0d 100%);
             border: 3px solid #25D366;
@@ -422,9 +437,12 @@
 </head>
 <body>
 
-    <!-- AVISO SUPERIOR / TOP BAR -->
+    <!-- AVISOS SUPERIORES / TOP BARS -->
     <div class="top-announcement-bar">
         🛡️ Distribuidor Autorizado &nbsp;|&nbsp; 💯 100% Original &nbsp;|&nbsp; 🔥 Descuentos Únicos
+    </div>
+    <div class="cod-top-alert">
+        🛵 <strong>¡PAGO CONTRA ENTREGA DISPONIBLE ÚNICAMENTE EN MEDELLÍN!</strong> (Pagas al recibir en casa u oficina)
     </div>
 
     <header class="hero">
@@ -433,7 +451,7 @@
             <h1>Tu Potencializador Sexual de Confianza</h1>
             <p>La potente "Píldora del Amor" y líquidos diseñados para mejorar el rendimiento. Envío seguro a todo Colombia.</p>
             
-            <!-- VIDEO AL LADO DE LA IMAGEN PRINCIPAL -->
+            <!-- VIDEO E IMAGEN PRINCIPAL LADO A LADO -->
             <div class="hero-media-container">
                 <div class="hero-media-item">
                     <video controls autoplay loop playsinline id="top-audio-video">
@@ -463,7 +481,7 @@
             </ul>
         </section>
 
-        <!-- SECCIÓN MODO DE USO Y EFECTOS (SOLICITUD NUEVA) -->
+        <!-- SECCIÓN MODO DE USO Y EFECTOS -->
         <section class="info-effects-box">
             <h2>💊 Modo de Uso y Efectos Garantizados</h2>
             <p style="color: #fff; font-size: 1.1rem; margin-bottom: 25px;">
@@ -507,7 +525,7 @@
 
         <hr>
 
-        <!-- SECCIÓN DE 6 COMBOS CON FOTOS ACTUALIZADAS Y PRECIOS NUEVOS -->
+        <!-- SECCIÓN DE 6 COMBOS -->
         <section id="combos">
             <h2>🔥 ¡Tenemos 6 increíbles Combos! 👀 🧐</h2>
             <p>Elige tu combo favorito en pastillas o líquidos. ¡Absoluta reserva!</p>
@@ -569,7 +587,7 @@
                     <a href="https://wa.me/573128580134?text=Hola,%20quiero%20pedir%20el%20*COMBO%203%20($60.000)*.%0AMis%20datos:%0A-Nombre:%0A-Dirección:%0A-Barrio:%0A-WhatsApp:" class="btn-whatsapp" target="_blank">🛵 Pedir Combo 3</a>
                 </div>
 
-                <!-- COMBO 4 (Líquidos - Precio Actualizado) -->
+                <!-- COMBO 4 (Líquidos) -->
                 <div class="combo-card">
                     <div class="card-carousel-container">
                         <button class="card-btn prev" onclick="slideCard(this, -1)">&#10094;</button>
@@ -587,7 +605,7 @@
                     <a href="https://wa.me/573128580134?text=Hola,%20quiero%20pedir%20el%20*COMBO%204%20(PowerSex Líquido $35.000)*.%0AMis%20datos:%0A-Nombre:%0A-Dirección:%0A-Barrio:%0A-WhatsApp:" class="btn-whatsapp" target="_blank">🛵 Pedir Combo 4</a>
                 </div>
 
-                <!-- COMBO 5 (Líquidos - Precio Actualizado y Foto Optimizada) -->
+                <!-- COMBO 5 (Líquidos) -->
                 <div class="combo-card">
                     <div class="card-carousel-container">
                         <button class="card-btn prev" onclick="slideCard(this, -1)">&#10094;</button>
@@ -604,7 +622,7 @@
                     <a href="https://wa.me/573128580134?text=Hola,%20quiero%20pedir%20el%20*COMBO%205%20(Vitafer $38.000)*.%0AMis%20datos:%0A-Nombre:%0A-Dirección:%0A-Barrio:%0A-WhatsApp:" class="btn-whatsapp" target="_blank">🛵 Pedir Combo 5</a>
                 </div>
 
-                <!-- COMBO 6 (Líquidos - Precio Actualizado) -->
+                <!-- COMBO 6 (Líquidos) -->
                 <div class="combo-card">
                     <div class="card-carousel-container">
                         <button class="card-btn prev" onclick="slideCard(this, -1)">&#10094;</button>
@@ -644,7 +662,7 @@
                 </div>
                 <div class="step-item">
                     <h4>Paso 4: ¡Recibe en Casa! 📦</h4>
-                    <p>Confirmamos tu pago y despachamos de inmediato. Recuerda que en Medellín puedes tener pago contra entrega o envíos discretos a todo el país.</p>
+                    <p>Confirmamos tu pago y despachamos de inmediato. Recuerda que solo en <strong>Medellín</strong> tienes la opción de pago contra entrega.</p>
                 </div>
             </div>
 
